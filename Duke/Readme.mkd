@@ -1,7 +1,21 @@
 El autor de estos Dukes es:
 https://twitter.com/Gusgux
+Los de la portada:
 |   |   |   |   |   | 
 |---|---|---|---|---|
 | <img src="Duke_Mexicano_Leyendo.png" width="250">  | <img src="Duke_Mexicano_Septiembre_Transparente.png" width="250">  |   |   |   |
 |   |   |   |   |   |
 |   |   |   |   |   |
+
+Otra temática:
+|   |   |   |   |   | 
+|---|---|---|---|---|
+|  |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
+
+Bitácora:
+<ul>
+  <li>01 de Septiembre 2022. Se agrega la versión inicial en los Dukes de portada.</li>
+  <li>14 de Septiembre 2022. Se agrega la versión patriota en los Dukes de portada.</li>
+</ul>
