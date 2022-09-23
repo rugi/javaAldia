@@ -10,7 +10,7 @@ Los de la portada:
 Otra temática:
 |   |   |   |   |   | 
 |---|---|---|---|---|
-|  |   |   |   |   |
+| <img src="Duke_Pensador_Estatua_Transparente.png" width="250"> |  <img src="Duke_Pensador_Transparente.png " width="250"> |   |   |   |
 |   |   |   |   |   |
 |   |   |   |   |   |
 
@@ -18,4 +18,6 @@ Bitácora:
 <ul>
   <li>01 de Septiembre 2022. Se agrega la versión inicial en los Dukes de portada.</li>
   <li>14 de Septiembre 2022. Se agrega la versión patriota en los Dukes de portada.</li>
+  <li>23 de Septiembre 2022. Se agrega la versión pensador.</li>
+  <li>23 de Septiembre 2022. Se agrega la versión pensador estatua.</li>
 </ul>
