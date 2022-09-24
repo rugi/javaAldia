@@ -10,7 +10,7 @@ Los de la portada:
 Otra temática:
 |   |   |   |   |   | 
 |---|---|---|---|---|
-| <img src="Duke_Pensador_Estatua_Transparente.png" width="250"> |  <img src="Duke_Pensador_Transparente.png " width="250"> |   |   |   |
+| <img src="Duke_Pensador_Estatua_Transparente.png" width="250"> |  <img src="Duke_Pensador_Transparente.png " width="250"> | <img src="Duke_GDL_Transparente.png" width="250">  |   |   |
 |   |   |   |   |   |
 |   |   |   |   |   |
 
@@ -20,4 +20,5 @@ Bitácora:
   <li>14 de Septiembre 2022. Se agrega la versión patriota en los Dukes de portada.</li>
   <li>23 de Septiembre 2022. Se agrega la versión pensador.</li>
   <li>23 de Septiembre 2022. Se agrega la versión pensador estatua.</li>
+  <li>24 de Septiembre 2022. Se agrega la versión Duke con un charro-24 y un micrófono en cada mano agradeciendo después de un concierto.</li>
 </ul>
