@@ -22,4 +22,5 @@ Bitácora:
   <li>23 de Septiembre 2022. Se agrega la versión pensador.</li>
   <li>23 de Septiembre 2022. Se agrega la versión pensador estatua.</li>
   <li>24 de Septiembre 2022. Se agrega la versión Duke con un charro-24 y un micrófono en cada mano agradeciendo después de un concierto.</li>
+  <li>26 de Octubre 2022. Se agrega la versión Duke Día de Muertos.</li>
 </ul>
