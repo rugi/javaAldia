@@ -4,9 +4,9 @@ https://twitter.com/Gusgux
 Los de la portada:
 |   |   |   |   |   | 
 |---|---|---|---|---|
-| <img src="Duke_Mexicano_Leyendo.png" width="250">  | <img src="Duke_Mexicano_Septiembre_Transparente.png" width="250">  |  <img src="
-Duke_Mexicano_Dia_Muertos.png " width="250">  |  <img src="
-Duke_Mexicano_Dia_Muertos_Transparente.png " width="250">  |   |
+| <img src="Duke_Mexicano_Leyendo.png" width="250">  | <img src="Duke_Mexicano_Septiembre_Transparente.png" width="250">  |  
+<img src="Duke_Mexicano_Dia_Muertos.png " width="250">  |  
+<img src="Duke_Mexicano_Dia_Muertos_Transparente.png " width="250">  |   |
 |   |   |   |   |   |
 |   |   |   |   |   |
 
