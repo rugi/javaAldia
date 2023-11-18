@@ -17,7 +17,7 @@ Otra temática:
 |   |   |   |   |   | 
 |---|---|---|---|---|
 | <img src="Duke_Pensador_Estatua_Transparente.png" width="250"> |  <img src="Duke_Pensador_Transparente.png " width="250"> | <img src="Duke_GDL_Transparente.png" width="250">  |   |   |
-| <img src="Duke_Shakespeare.png" width="250"> |  <img src="Duke_Shakespeare_Transparent.png" width="250"> |   <img src="Duke_Guerrero_Aguila.png" width="250">  |  <img src="Duke_Guerrero_Aguila_Tansparente.png" width="250">  |   |
+| <img src="Duke_Shakespeare.png" width="250"> |  <img src="Duke_Shakespeare_Transparent.png" width="250"> |   <img src="Duke_Guerrero_Aguila.png" width="250">  |  <img src="Duke_Guerrero_Aguila_Tansparente.png" width="250">  |  <img src="Duke_Mexicano_Minerva.png" width="250">  |
 |   |   |   |   |   |
 |   |   |   |   |   |
 
@@ -31,4 +31,5 @@ Bitácora:
   <li>26 de Octubre 2022. Se agrega la versión Duke Día de Muertos.</li>
   <li>08 de Enero 2023. Se sube el Duke Hamlet para la entrada: https://www.linkedin.com/pulse/java-migrar-o-isaac-ruiz-guerra/.</li>  
   <li>19 de Abril 2023. Se sube el Duke Guerreo águila para la entrada: https://www.linkedin.com/pulse/java-native-compilation-isaac-ruiz-guerra/.</li>  
+  <li>22 de Septiembre 2023. Se sube el Duke en paracaìdas descendiendo en Guadalaja, sobre la Minerva. Usado para Java Day GDL 2023. https://www.facebook.com/gdljug/posts/pfbid02YEccMAfUf73gt6QcSKue8o1P2ogyGL1Zt4gNUNaJXkhvxqcGPrwhhB7c8GmpttJwl</li>  
 </ul>
