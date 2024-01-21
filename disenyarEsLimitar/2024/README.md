@@ -1,4 +1,4 @@
-#Diseñar es limitar.
+# Diseñar es limitar.
 
-##2024
+## 2024
 ### Enero
