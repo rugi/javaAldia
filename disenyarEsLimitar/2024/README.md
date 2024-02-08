@@ -22,8 +22,7 @@ Diseñar es Limitar. versión: chocolate.<br/>
 Este me gustó mucho porqué, además de servir para esta sección, es un ejemplo (forzado, lo sé) de paralelismo.<br/>
 <br/>
 A mí entender: Cuando una tarea puede dividirse en pequeñas tareas iguales, y el resultado de cada una suma al resultado final, es decir, al juntar el resultado de todas, la tarea mayor-inicial se dá por concluída... Eso es paralelismo<br/>
-Tomado de: [https://twitter.com/ScienceGuys_/status/1744361413085114807](https://twitter.com/Rainmaker1973/status/1754858940175687922)https://twitter.com/Rainmaker1973/status/1754858940175687922
-  <br/>
+Tomado de:https://twitter.com/Rainmaker1973/status/1754858940175687922<br/>
 
-<img src="chocolate">
+<img src="chocolate.gif">
 
