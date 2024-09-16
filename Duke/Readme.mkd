@@ -18,7 +18,7 @@ Otra temática:
 |---|---|---|---|---|
 | <img src="Duke_Pensador_Estatua_Transparente.png" width="250"> |  <img src="Duke_Pensador_Transparente.png " width="250"> | <img src="Duke_GDL_Transparente.png" width="250">  |   |   |
 | <img src="Duke_Shakespeare.png" width="250"> |  <img src="Duke_Shakespeare_Transparent.png" width="250"> |   <img src="Duke_Guerrero_Aguila.png" width="250">  |  <img src="Duke_Guerrero_Aguila_Tansparente.png" width="250">  |  <img src="Duke_Mexicano_Minerva.png" width="250">  |
-|  <img src="Duke_Ramita_Diciembre_Transparente.png" width="250">  |  <img src="Duke_Ramita_Diciembre.png" width="250">  |   |   |   |
+|  <img src="Duke_Ramita_Diciembre_Transparente.png" width="250">  |  <img src="Duke_Ramita_Diciembre.png" width="250">  |  <img src="Duke_CimaDelMundo_Transparente.png" width="250"> |   |   |
 |   |   |   |   |   |
 
 Bitácora:
