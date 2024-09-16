@@ -33,4 +33,5 @@ Bitácora:
   <li>19 de Abril 2023. Se sube el Duke Guerreo águila para la entrada: https://www.linkedin.com/pulse/java-native-compilation-isaac-ruiz-guerra/.</li>  
   <li>22 de Septiembre 2023. Se sube el Duke en paracaìdas descendiendo en Guadalajara, sobre la Minerva. Usado para Java Day GDL 2023. https://www.facebook.com/gdljug/posts/pfbid02YEccMAfUf73gt6QcSKue8o1P2ogyGL1Zt4gNUNaJXkhvxqcGPrwhhB7c8GmpttJwl</li>  
     <li>23 de Diciembre 2023. Se sube el Duke con la ramita, tradición del edo de Veracruz. Usado para la entrada del resumen anual 2023 del newsletter.  https://www.linkedin.com/pulse/felices-fiestas-2023-isaac-ruiz-guerra-uq2ne/?trackingId=OIopwH%2BBS7KUDHPwAK9rgg%3D%3D</li> 
+  <li>24 de Enero 2024. Duke Cima del mundo, versión de Duke de famosa pintura. Usado para la entrada de: https://www.linkedin.com/pulse/quo-vadis-duke-isaac-ruiz-guerra-8sdpe/?trackingId=MTo8qMo6Q8yS%2F%2FnEESHu9w%3D%3D</li>
 </ul>
