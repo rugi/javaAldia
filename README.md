@@ -1,12 +1,4 @@
-# javaAldia
-Repositorio relacionado al newsletter: Java al Día.
-
-Puedes subscribirte al Newsletter aquí:
-https://www.linkedin.com/newsletters/6931281718834335744/
-
-<img src="Newsletter.png">
-
-## 📬 Newsletter
+ ## 📬 Newsletter
 
 Mantente al día con mis últimas publicaciones y actualizaciones suscribiéndote a mi [newsletter](https://www.linkedin.com/newsletters/6931281718834335744/). Aquí puedes encontrar las ediciones más recientes:
 
