@@ -5,6 +5,7 @@ Mantente al día con mis últimas publicaciones y actualizaciones suscribiéndot
 ### 2025
 | 📌 | 📖 Artículo | 📅 Fecha |
 |----|-----------|---------|
+| 📖 | [Sealed Classes. Parte 2.](https://www.linkedin.com/pulse/sealed-classes-parte-2-isaac-ruiz-guerra-jd4ye) | Julio 28, 2025 |
 | 📖 | [Sealed Classes. Parte 1.](https://www.linkedin.com/pulse/sealed-classes-parte-1-isaac-ruiz-guerra-vxyie) | Julio 14, 2025 |
 | 📖 | [Optional. Más de lo que pensamos.](https://www.linkedin.com/pulse/optional-m%25C3%25A1s-de-lo-que-pensamos-isaac-ruiz-guerra-nfnje/) | Mayo 16, 2025 |
 | 📖 | [Java 8 fue un regalo… que se convirtió en una trampa.](https://www.linkedin.com/pulse/java-8-fue-un-regalo-que-se-convirti%C3%B3-en-una-trampa-isaac-ruiz-guerra-g6cve/) | April 30, 2025 |
