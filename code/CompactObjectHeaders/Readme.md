@@ -18,7 +18,7 @@ Para efectos ilustrativos, asumimos que pusimos el archivo en la carpeta:
 D:\tmp\header>
 ``` 
 
-### Paso 1. Compilar y ejecutar con versión anterior a java 25 (en este ejemplo se usa java 17)
+### Compilar y ejecutar con versión anterior a java 25 (en este ejemplo se usa java 17)
 
 #### Validamos version anterior a java 25
 ``` console
@@ -38,7 +38,7 @@ D:\tmp\header> java CompactHeaderDemo
 Memoria usada: 281 MB
 ```
 
-### Paso 2. Compilamos y ejecutamos con java 25.
+### Compilamos y ejecutamos con java 25.
 
 #### Validamos version anterior a java 25
 ``` console
@@ -65,5 +65,21 @@ Memoria usada: 268 MB
 
 
 ### Linux
+#### Validamos version anterior a java 25
+``` console
+[rugi@bigoze tmp]$ java -version
+java version "17.0.5" 2022-10-18 LTS
+Java(TM) SE Runtime Environment (build 17.0.5+9-LTS-191)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.5+9-LTS-191, mixed mode, sharing)
 
-## Paso 3. Comparar resultados.
+[rugi@bigoze tmp]$ javac CompactHeaderDemo.java 
+
+[rugi@bigoze tmp]$ java CompactHeaderDemo 
+Memoria usada: 273 MB
+``` 
+### Compilamos y ejecutamos con java 25.
+
+#### Validamos version anterior a java 25
+``` console
+
+```
