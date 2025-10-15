@@ -13,7 +13,7 @@ Para validar, asegurate de que tienes al menos java 25 y una version anterior, e
 ### Windows
 #### Validamos version anterior a java 25
 ``` console
-D:\tmp\header> D:\opt\Java\jdk-17\bin\java -version
+D:\tmp\header> java -version
 java version "17.0.14" 2025-01-21 LTS
 Java(TM) SE Runtime Environment (build 17.0.14+8-LTS-191)
 Java HotSpot(TM) 64-Bit Server VM (build 17.0.14+8-LTS-191, mixed mode, sharing)
@@ -21,11 +21,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 17.0.14+8-LTS-191, mixed mode, sharing)
 
 #### Compilamos
 ``` console
-D:\tmp\header> D:\opt\Java\jdk-17\bin\javac .\CompactHeaderDemo.java
+D:\tmp\header> javac .\CompactHeaderDemo.java
 ```
 ### Ejecutamos
 ``` console
-D:\tmp\header> D:\opt\Java\jdk-17\bin\java CompactHeaderDemo
+D:\tmp\header> java CompactHeaderDemo
 Memoria usada: 281 MB
 ```
 ### Linux
