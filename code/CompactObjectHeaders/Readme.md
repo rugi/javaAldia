@@ -9,8 +9,17 @@ con el JSR-, el tamaño de los Headers de cada objeto se ha reducido, y eso hace
 
 Para validar, asegurate de que tienes al menos java 25 y una version anterior, en este ejemplo mostramos resultados de ejecutar el código con java 17 y java 25.
 
-## Paso 1. Compilar y ejecutar con versión anterior a java 25 (en este ejemplo se usa java 17)
-### Windows
+## Windows
+### Paso 0. Coloca el archivo en una carpeta.
+Esa carpeta será tu carpeta de trabajo, al no tener paquete la clase, solo requerimos estar en esa carpeta para compilar y ejecutar.
+
+Para efectos ilustrativos, asumimos que pusimos el archivo en la carpeta:
+``` console
+D:\tmp\header>
+``` 
+
+### Paso 1. Compilar y ejecutar con versión anterior a java 25 (en este ejemplo se usa java 17)
+
 #### Validamos version anterior a java 25
 ``` console
 D:\tmp\header> java -version
@@ -23,15 +32,37 @@ Java HotSpot(TM) 64-Bit Server VM (build 17.0.14+8-LTS-191, mixed mode, sharing)
 ``` console
 D:\tmp\header> javac .\CompactHeaderDemo.java
 ```
-### Ejecutamos
+#### Ejecutamos
 ``` console
 D:\tmp\header> java CompactHeaderDemo
 Memoria usada: 281 MB
 ```
-### Linux
 
-## Paso 2. Compilar y ejecutar con java 25.
-### Windows
+### Paso 2. Compilamos y ejecutamos con java 25.
+
+#### Validamos version anterior a java 25
+``` console
+D:\tmp\header> java -version
+java version "25" 2025-09-16 LTS
+Java(TM) SE Runtime Environment (build 25+37-LTS-3491)
+Java HotSpot(TM) 64-Bit Server VM (build 25+37-LTS-3491, mixed mode, sharing)
+```
+
+#### Borramos los class existentes
+``` console
+D:\tmp\header> rm *.class
+```
+#### Compilamos
+``` console
+D:\tmp\header> javac .\CompactHeaderDemo.java
+```
+
+#### Ejecutamos
+``` console
+D:\tmp\header> java CompactHeaderDemo
+Memoria usada: 268 MB
+```
+
 
 ### Linux
 
