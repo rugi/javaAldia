@@ -64,7 +64,7 @@ Memoria usada: 268 MB
 ```
 
 
-### Linux
+## Linux
 ### Coloca el archivo en una carpeta.
 Esa carpeta será tu carpeta de trabajo, al no tener paquete la clase, solo requerimos estar en esa carpeta para compilar y ejecutar.
 
