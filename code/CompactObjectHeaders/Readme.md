@@ -11,7 +11,17 @@ Para validar, asegurate de que tienes al menos java 25 y una version anterior, e
 
 ## Paso 1. Compilar y ejecutar con versión anterior a java 25 (en este ejemplo se usa java 17)
 ### Windows
+''' console
+D:\tmp\header> D:\opt\Java\jdk-17\bin\java -version
+java version "17.0.14" 2025-01-21 LTS
+Java(TM) SE Runtime Environment (build 17.0.14+8-LTS-191)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.14+8-LTS-191, mixed mode, sharing)
 
+D:\tmp\header> D:\opt\Java\jdk-17\bin\javac .\CompactHeaderDemo.java
+
+D:\tmp\header> D:\opt\Java\jdk-17\bin\java CompactHeaderDemo
+Memoria usada: 281 MB
+'''
 ### Linux
 
 ## Paso 2. Compilar y ejecutar con java 25.
