@@ -10,7 +10,7 @@ con el JSR-, el tamaño de los Headers de cada objeto se ha reducido, y eso hace
 Para validar, asegurate de que tienes al menos java 25 y una version anterior, en este ejemplo mostramos resultados de ejecutar el código con java 17 y java 25.
 
 ## Windows
-### Paso 0. Coloca el archivo en una carpeta.
+### Coloca el archivo en una carpeta.
 Esa carpeta será tu carpeta de trabajo, al no tener paquete la clase, solo requerimos estar en esa carpeta para compilar y ejecutar.
 
 Para efectos ilustrativos, asumimos que pusimos el archivo en la carpeta:
@@ -65,6 +65,13 @@ Memoria usada: 268 MB
 
 
 ### Linux
+### Coloca el archivo en una carpeta.
+Esa carpeta será tu carpeta de trabajo, al no tener paquete la clase, solo requerimos estar en esa carpeta para compilar y ejecutar.
+
+Para efectos ilustrativos, asumimos que pusimos el archivo en la carpeta:
+``` console
+\tmp\header>
+``` 
 #### Validamos version anterior a java 25
 ``` console
 [rugi@bigoze header]$ java -version
