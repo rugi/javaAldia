@@ -71,7 +71,10 @@ Esa carpeta será tu carpeta de trabajo, al no tener paquete la clase, solo requ
 Para efectos ilustrativos, asumimos que pusimos el archivo en la carpeta:
 ``` console
 \tmp\header>
-``` 
+```
+
+### Compilar y ejecutar con versión anterior a java 25 (en este ejemplo se usa java 17)
+
 #### Validamos version anterior a java 25
 ``` console
 [rugi@bigoze header]$ java -version
