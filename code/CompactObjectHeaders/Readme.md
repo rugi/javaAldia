@@ -67,19 +67,29 @@ Memoria usada: 268 MB
 ### Linux
 #### Validamos version anterior a java 25
 ``` console
-[rugi@bigoze tmp]$ java -version
+[rugi@bigoze header]$ java -version
 java version "17.0.5" 2022-10-18 LTS
 Java(TM) SE Runtime Environment (build 17.0.5+9-LTS-191)
 Java HotSpot(TM) 64-Bit Server VM (build 17.0.5+9-LTS-191, mixed mode, sharing)
 
-[rugi@bigoze tmp]$ javac CompactHeaderDemo.java 
+[rugi@bigoze header]$ javac CompactHeaderDemo.java 
 
-[rugi@bigoze tmp]$ java CompactHeaderDemo 
+[rugi@bigoze header]$ java CompactHeaderDemo 
 Memoria usada: 273 MB
 ``` 
 ### Compilamos y ejecutamos con java 25.
 
 #### Validamos version anterior a java 25
 ``` console
+[rugi@bigoze header]$ java -version 
+java version "25" 2025-09-16 LTS
+Java(TM) SE Runtime Environment (build 25+37-LTS-3491)
+Java HotSpot(TM) 64-Bit Server VM (build 25+37-LTS-3491, mixed mode, sharing)
 
+[rugi@bigoze header]$ rm *.class
+
+[rugi@bigoze header]$ javac CompactHeaderDemo.java 
+
+[rugi@bigoze header]$ java CompactHeaderDemo 
+Memoria usada: 271 MB
 ```
