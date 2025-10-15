@@ -86,7 +86,7 @@ Memoria usada: 273 MB
 ``` 
 ### Compilamos y ejecutamos con java 25.
 
-#### Validamos version anterior a java 25
+#### Validamos con java 25
 ``` console
 [rugi@bigoze header]$ java -version 
 java version "25" 2025-09-16 LTS
