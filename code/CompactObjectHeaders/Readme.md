@@ -103,3 +103,10 @@ Java HotSpot(TM) 64-Bit Server VM (build 25+37-LTS-3491, mixed mode, sharing)
 [rugi@bigoze header]$ java CompactHeaderDemo 
 Memoria usada: 271 MB
 ```
+
+
+------
+El ahorro puede variar dados varios factores, incluyendo las características de tu instancia y si se están ejecutando otros procesos,
+la sugerencia aquí es que pruebes en varios lugares y, aumentes la cantidad de objetos si tu instancia tiene más recuros.
+
+En cualquier caso, debes ver un ahorro de MB, lo cual, siempre ayuda.
