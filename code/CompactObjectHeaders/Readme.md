@@ -105,7 +105,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25+37-LTS-3491, mixed mode, sharing)
 
 [rugi@bigoze header]$ javac CompactHeaderDemo.java 
 
-[rugi@bigoze header]$ java -Xms512m -Xmx512m CompactHeaderDemo 
+[rugi@bigoze header]$ java -XX:+UseCompactObjectHeaders  -Xms512m -Xmx512m  CompactHeaderDemo
 Memoria usada: 270 MB
 ```
 ------
