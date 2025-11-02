@@ -64,7 +64,7 @@ D:\tmp\header> javac .\CompactHeaderDemo.java
 
 #### Ejecutamos
 ``` console
-D:\tmp\header>  java  -Xms512m -Xmx512m .\CompactHeaderDemo.java
+D:\tmp\header> java  -XX:+UseCompactObjectHeaders -Xms512m -Xmx512m .\CompactHeaderDemo.java
 Memoria usada: 244 MB
 ```
 
