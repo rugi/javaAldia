@@ -39,8 +39,8 @@ D:\tmp\header> javac .\CompactHeaderDemo.java
 ```
 #### Ejecutamos
 ``` console
-D:\tmp\header> java CompactHeaderDemo
-Memoria usada: 281 MB
+D:\tmp\header> java  -Xms512m -Xmx512m .\CompactHeaderDemo.java
+Memoria usada: 262 MB
 ```
 
 ### Compilamos y ejecutamos con java 25.
@@ -64,8 +64,8 @@ D:\tmp\header> javac .\CompactHeaderDemo.java
 
 #### Ejecutamos
 ``` console
-D:\tmp\header> java CompactHeaderDemo
-Memoria usada: 268 MB
+D:\tmp\header>  java  -Xms512m -Xmx512m .\CompactHeaderDemo.java
+Memoria usada: 244 MB
 ```
 
 
