@@ -8,6 +8,7 @@ El ejemplo se usa para mostrar el ahorro de memoria que tiene a partir de java 2
 con el JSR-, el tamaño de los Headers de cada objeto se ha reducido, y eso hace que se requiera menos memoria para cada uno de ellos.
 
 Para validar, asegurate de que tienes al menos java 25 y una version anterior, en este ejemplo mostramos resultados de ejecutar el código con java 17 y java 25.
+
 Limitaremos con: -Xms512m y -Xmx512m para controlar el heap
 
 El código fuente está en esta misma carpeta, la clase no tiene paquete, por lo que, solo debes colocarla en una carpeta y en esa misma carpeta: compilar y ejecutar.
