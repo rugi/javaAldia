@@ -89,7 +89,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 17.0.5+9-LTS-191, mixed mode, sharing)
 
 [rugi@bigoze header]$ javac CompactHeaderDemo.java 
 
-[rugi@bigoze header]$ java CompactHeaderDemo 
+[rugi@bigoze header]$ java -Xms512m -Xmx512m  CompactHeaderDemo 
 Memoria usada: 273 MB
 ``` 
 ### Compilamos y ejecutamos con java 25.
@@ -105,11 +105,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 25+37-LTS-3491, mixed mode, sharing)
 
 [rugi@bigoze header]$ javac CompactHeaderDemo.java 
 
-[rugi@bigoze header]$ java CompactHeaderDemo 
-Memoria usada: 271 MB
+[rugi@bigoze header]$ java -Xms512m -Xmx512m CompactHeaderDemo 
+Memoria usada: 270 MB
 ```
-
-
 ------
 El ahorro puede variar dados varios factores, incluyendo las características de tu instancia y si se están ejecutando otros procesos,
 la sugerencia aquí es que pruebes en varios lugares y, aumentes la cantidad de objetos si tu instancia tiene más recuros.
