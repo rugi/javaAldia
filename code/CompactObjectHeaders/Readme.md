@@ -2,7 +2,7 @@
 Este ejemplo se usó en el newsletter en su edición sobre Compact Object Headers.
 
 Puedes ver el artículo completo aquí:
-
+https://www.linkedin.com/pulse/java-25-lts-jep-519-compact-object-headers-isaac-ruiz-guerra-gmn0e/
 
 El ejemplo se usa para mostrar el ahorro de memoria que tiene a partir de java 25, 
 con el JSR-, el tamaño de los Headers de cada objeto se ha reducido, y eso hace que se requiera menos memoria para cada uno de ellos.
