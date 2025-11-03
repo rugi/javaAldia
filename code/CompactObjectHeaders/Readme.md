@@ -13,6 +13,10 @@ Limitaremos con: -Xms512m y -Xmx512m para controlar el heap
 
 El código fuente está en esta misma carpeta, la clase no tiene paquete, por lo que, solo debes colocarla en una carpeta y en esa misma carpeta: compilar y ejecutar.
 
+Aquí:
+
+
+https://github.com/rugi/javaAldia/blob/main/code/CompactObjectHeaders/CompactHeaderDemo.java
 
 ## Windows
 ### Coloca el archivo en una carpeta.
