@@ -11,7 +11,7 @@ Para validar, asegurate de que tienes al menos java 25 y una version anterior, e
 
 Limitaremos con: -Xms512m y -Xmx512m para controlar el heap
 
-*Importante*: Observa que para java25 usaremos <code>-XX:+UseCompactObjectHeaders</code>, si bien la <i>feature</i> es parte ya de la versiòn 25, es importante activarla desde la linea de ejecución.
+**Importante** : Observa que para java25 usaremos <code>-XX:+UseCompactObjectHeaders</code>, si bien la <i>feature</i> es parte ya de la versiòn 25, es importante activarla desde la linea de ejecución.
 
 
 El código fuente está en esta misma carpeta, la clase no tiene paquete, por lo que, solo debes colocarla en una carpeta y en esa misma carpeta: compilar y ejecutar.
