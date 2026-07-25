@@ -115,3 +115,48 @@ _Figura 1. El objetivo de la JSR 03 visto de manera gráfica._
 
 
 
+Si recuerdas tus clases de compiladores, puedes darte cuenta que, la imagen anterior bien puede convertirse en:
+
+``` mermaid
+flowchart LR
+
+    subgraph DEFINE["DEFINE — Qué se expone"]
+        S[Servicios]
+        API[APIs]
+        P[Patrones]
+        ARQ[Arquitectura]
+    end
+
+    subgraph PARA["PARA — Con qué propósito"]
+        M[Monitorear]
+        ADM[Administrar]
+    end
+
+    subgraph A["A — Sobre qué objetivo"]
+        APP[Aplicaciones]
+        NET[Network]
+    end
+
+    S --> M
+    S --> ADM
+
+    API --> M
+    API --> ADM
+
+    P --> M
+    P --> ADM
+
+    ARQ --> M
+    ARQ --> ADM
+
+    M --> APP
+    M --> NET
+
+    ADM --> APP
+    ADM --> NET
+```
+_Figura 2. Todo lo que podemos hacer con JMX._
+
+
+
+
