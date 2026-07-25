@@ -159,4 +159,35 @@ _Figura 2. Todo lo que podemos hacer con JMX._
 
 
 
+Lo primero que llama la atención es que, la especificación incluye el monitoreo de redes, algo que muy pocos sabemos o pensamos que se podríahacer con JMX.
+
+## ¿Por qué usar JMX?
+Este es el listado de beneficios que se mencionan se obtienen al utilizar JMX:
+
+* Permite gestionar las aplicaciones Java sin invertir grandes esfuerzos.
+* Proporciona una arquitectura de administración escalable.
+* Se integra a soluciones de supervisión existentes.
+* Aprovecha las tecnologías Java estándar ya existentes.
+* Puede aprovechar a futuro conceptos de supervisión.
+* Define sólo las interfaces necesarias para la supervisión.
+
+En la práctica, los beneficios se van observando conforme se aumenta su uso.
+
+Es claro que son muchas las aplicaciones que la utilizan, principalmente en el mundo JEE, pero su uso no está limitado a este subconjunto deespecificaciones. Aplicaciones de escritorio, embebidas y remotas le sacan también provecho a esta tecnología.
+
+## Visión general.
+La especificación continúa dándonos un resumen tanto de la arquitectura como de los componentes que la conforman.
+
+## Arquitectura.
+La arquitectura es sencilla, son 3 los niveles de abstracción que se utilizan.
+
+### Los 3 niveles de la especificación.
+La especificación requiere 3 niveles de abstracción:
+* Instrumentación.
+* Agente.
+* Servicios distribuidos.
+
+Estos 3 niveles en conjunto son los que se encargan de que la especificación pueda funcionar.
+
+
 
