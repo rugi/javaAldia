@@ -173,7 +173,9 @@ Este es el listado de beneficios que se mencionan se obtienen al utilizar JMX:
 
 En la práctica, los beneficios se van observando conforme se aumenta su uso.
 
-Es claro que son muchas las aplicaciones que la utilizan, principalmente en el mundo JEE, pero su uso no está limitado a este subconjunto deespecificaciones. Aplicaciones de escritorio, embebidas y remotas le sacan también provecho a esta tecnología.
+Es claro que son muchas las aplicaciones que la utilizan, principalmente en el mundo JEE, pero su uso no está limitado a este subconjunto de especificaciones. 
+
+Aplicaciones de escritorio, embebidas y remotas le sacan también provecho a esta tecnología.
 
 ## Visión general.
 La especificación continúa dándonos un resumen tanto de la arquitectura como de los componentes que la conforman.
@@ -188,6 +190,21 @@ La especificación requiere 3 niveles de abstracción:
 * Servicios distribuidos.
 
 Estos 3 niveles en conjunto son los que se encargan de que la especificación pueda funcionar.
+
+
+_Figura 2. Los 3 niveles de abstracción de la JSR 03._
+
+Los niveles pueden verse siguiendo esa jerarquía, de arriba hacia abajo (abajo la más sencilla y sube en complejidad), para indicar la secuencia quese debe seguir para poder implementar o usar JMX en nuestras aplicaciones java.
+
+Demos un repaso de cada nivel.
+
+### Nivel de instrumentación.
+
+El primer nivel, el de instrumentación proporciona las especificaciones requeridas para implementar: JMX manageable resources, algo quepodríamos traducir como: recursos
+supervisables JMX ( dejaremos el nombre en inglés para mantener la referencia con otros documentos).
+
+Un <JMX manageable resource> puede ser:
+
 
 
 
