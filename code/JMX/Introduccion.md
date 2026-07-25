@@ -109,7 +109,7 @@ Es importante tenerlo en cuenta pues, la especificación suele usar únicamente 
 Vamos a desglosar el 1er párrafo de la especificación de una manera un poco más gráfica para ver de mejor manera su alcance.
 El objetivo de la especificación puede quedar explicado así:
 
-<img src="img/jsr03.png" border="1">
+<img src="img/jsr03_main.png" border="1">
 
 _Figura 1. El objetivo de la JSR 03 visto de manera gráfica._
 
