@@ -201,10 +201,49 @@ Demos un repaso de cada nivel.
 ### Nivel de instrumentación.
 
 El primer nivel, el de instrumentación proporciona las especificaciones requeridas para implementar: JMX manageable resources, algo quepodríamos traducir como: recursos
-supervisables JMX ( dejaremos el nombre en inglés para mantener la referencia con otros documentos).
+supervisables JMX (dejaremos el nombre en inglés para mantener la referencia con otros documentos).
 
-Un <JMX manageable resource> puede ser:
+Un _JMX manageable resource_ puede ser:
 
+* Una aplicación.
+* Una implementación de un servicio.
+* Un dispositivo.
+* Un usuario.
+* Étcetera.
 
+Está desarrollado en java o al menos ofrece un punto de acceso vía java, además de que ha sido instrumentado para ser supervisado poraplicaciones compatibles con JMX.
+La pieza clave de este nivel son los Managed Beans, o MBeans.
+
+Los MBeans pueden ser de tipo:
+* Standard
+* Dynamic
+
+El tipo standard es el más sencillo, se basa en la especificación para los JavaBeans, el tipo Dynamic es más complejo y a cambio de esacomplejidad ofrece una mayor flexibilidad en tiempo de ejecución.
+
+Un _JMX manageable resource_ puede estar cubierto por uno o más MBeans.
+Este nivel, además de los MBeans define las especificaciones para proporcionar un mecanismo de notificación. Este mecanismo de notificaciónpermite a los MBeans generar y propagar eventos de notificación hacia componentes de los otros dos niveles.
+
+Como todo nivel jerárquico, los elementos de este nivel, los _<JMX manageable resource_ son manejados (de manera automática) por el siguientenivel: los agentes.
+
+_Figura 3. Nivel de instrumentación y sus componentes._
+
+### Nivel de agentes.
+
+En este nivel se define todo lo relacionado con los agentes. Aquí es donde se gestiona el <JMX manageable resource> y se hace lo necesario paraque pueda ser manipulable de manera remota.
+
+Este nivel recibe los MBeans y los gestiona automáticamente, los agentes generalmente están en la misma máquina que los <JMX manageableresource> pero esto no necesariamente es así.
+
+Este nivel se puede englobar en dos grandes componentes:
+
+* El MBean Server
+* Servicios para manipular los MBeans.
+* 
+Para ir familiarizándonos con la tecnología, tanto el servidor de MBeans como nuestro _JMX manageable resource_ a instrumentar vivirán en laJVM, pero, lo realmente poderoso de JMX es tener al servidor en otro contexto de ejecución.
+
+Para ello la especificación agrega dos conceptos: Adaptadores y conectores, son componentes de comunicación que permiten unir al Server MBeancon el resto del mundo. Por ahora sólo es necesario que conozcamos de su existencia.
+
+Como en el nivel anterior, este nivel solo se _"preocupa"_ por cumplir su parte de la especificación y los niveles adyacentes se encargarán de trabajaren conjunto.
+
+_Figura 4. Nivel de Agente y sus componentes._
 
 
