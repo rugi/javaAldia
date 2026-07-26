@@ -389,7 +389,7 @@ Todos los anteriores MBean realmente extienden a este MBean. Estás clases conti
 * Atributos
 * Operaciones
 * Notificaciones y
-*Constructores.
+* Constructores.
 
 Es el servidor de MBean el que proporciona todos estos metadatos, y el que se encarga de implementarlos.
 
