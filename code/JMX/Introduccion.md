@@ -218,12 +218,12 @@ Los MBeans pueden ser de tipo:
 * Standard
 * Dynamic
 
-El tipo standard es el más sencillo, se basa en la especificación para los JavaBeans, el tipo Dynamic es más complejo y a cambio de esacomplejidad ofrece una mayor flexibilidad en tiempo de ejecución.
+El tipo standard es el más sencillo, se basa en la especificación para los JavaBeans, el tipo Dynamic es más complejo y a cambio de esa complejidad ofrece una mayor flexibilidad en tiempo de ejecución.
 
 Un _JMX manageable resource_ puede estar cubierto por uno o más MBeans.
-Este nivel, además de los MBeans define las especificaciones para proporcionar un mecanismo de notificación. Este mecanismo de notificaciónpermite a los MBeans generar y propagar eventos de notificación hacia componentes de los otros dos niveles.
+Este nivel, además de los MBeans define las especificaciones para proporcionar un mecanismo de notificación. Este mecanismo de notificación permite a los MBeans generar y propagar eventos de notificación hacia componentes de los otros dos niveles.
 
-Como todo nivel jerárquico, los elementos de este nivel, los _<JMX manageable resource_ son manejados (de manera automática) por el siguientenivel: los agentes.
+Como todo nivel jerárquico, los elementos de este nivel, los _JMX manageable resource_ son manejados (de manera automática) por el siguientenivel: los agentes.
 
 _Figura 3. Nivel de instrumentación y sus componentes._
 
