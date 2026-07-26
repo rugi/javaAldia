@@ -432,3 +432,43 @@ El aseguramiento de servidores de MBeans es un tema que se verá posteriormente.
 
  
 _Figura 8. Advertencia de que la conexión segura no fue posible de realizar._
+
+
+Debemos aceptar que usaremos una conexión insegura. Con esto, podemos continuar.
+
+La primera pantalla que vemos nos muestra el consumo de recursos de JConsole, en la parte superior podemos ver todas las  fichas/tabs que ofrece la IU.
+
+_Figura 9. Monitor principal del JConsole._
+
+La pantalla inicial seguramente es ya conocida, nos muestra indicadores de desempeño del proceso: heap, threads, clases cargadas, y uso de CPU.
+
+Hasta la derecha, podemos ver la ficha relacionada a los MBeans.
+Como se puede ver, la lista de MBeans es extensa y se encuentran organizados en forma de árbol.
+
+### Listado de MBeans disponibles.
+
+El listado que aparece en esta pestaña representa todos los MBeans disponibles en esta conexión.
+
+Figura 10. Ficha MBeans dentro de JConsole, mostrando los MBeans disponibles.
+
+Hay un MBean debajo de `java.lang`, llamado `Memory`, si hacemos _click_ sobre el `MBean` podemos ver sus principales propiedades, entre ellas hay una llamada _Object Name_, conoceremos en un momento su importancia.
+
+__Figura 11. El object name del MBean que opera sobre la memoria.
+
+Ahora, si hacemos click en él podremos ver las operaciones que expone.
+
+_Figura 12. Existe un MBean que permite invocar el Garbage Collector._
+
+La operación invoca al Garbage Collector _(realmente, como sabemos, GC() sólo sugiere la invocación, es la JVM la que decide ejecutarla o no)_.
+
+Si hacemos _click_ en el botón, se realiza la invocación, y si regresamos a la pestaña inicial podremos ver los efectos.
+
+<img src="imgJConsole_06.png/" border="1">
+_Figura 13. Los efectos de invocar el Garbage Collector._
+
+El tamaño de la memoria disminuye, pero, tiene un costo: uso de CPU.
+
+
+Podemos cerrar JConsole, más adelante lo volveremos a usar.
+
+### Nuestro primer MBean standard.
