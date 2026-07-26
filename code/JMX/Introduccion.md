@@ -379,8 +379,8 @@ Este nivel de la especificación define también un modelo genérico de notifica
 La especificación define:
 
 * Los objetos para realizar la notificación
-* Interfaces para implementar los <Listeners>.
-* Interfaces para implementar el <broadcast>
+* Interfaces para implementar los _Listeners_.
+* Interfaces para implementar el _broadcast_.
 
 Esto tanto para los que envían como los que reciben las notificaciones. Aquí también se definen los servicios necesarios para que estasnotificaciones puedan ser funcionales de manera remota.
 MBean Metadata Classes.
