@@ -396,3 +396,28 @@ Es el servidor de MBean el que proporciona todos estos metadatos, y el que se en
 Ahora, continuamos revisando una herramienta que seguramente ya has utilizado.
 
 ## JConsole
+
+JConsole es la herramienta que proporciona el JDK para poder acceder a los servidores de MBeans, como vimos anteriormente, es en estosservidores donde se hospedan los MBeans.
+JConsole permite acceder tanto servidores locales como remotos, iniciaremos primero conociendo como conectarnos a un servidor local y enentregas posteriores veremos cómo conectarnos a servidores remotos.
+Iniciando.
+
+Si tienes en el PATH local la carpeta /bin del JDK, solamente hay que escribir en una ventana de comandos:
+
+``` bash
+%>jconsole
+```
+
+Esto abrirá JConsole. La 1er pantalla nos permite elegir entre los procesos locales que están ejecutándose sobre nuestra JVM, todos ellos hacenuso de un servidor MBean local.
+
+Vamos a conectarnos al proceso del propio JConsole. Es decir, usaremos JConsole, para revisar JConsole ;) .
+
+
+_Figura 7. La propia JConsole tiene expuestos MBeans para poder supervisarla._
+
+Después de hacer doble _click_ sobre el proceso al cual nos queremos conectar nos va a aparecer una advertencia de seguridad, esto se debe a que el servidor local de _MBeans_ por
+_ default_ no están asegurados.
+
+El aseguramiento de servidores de MBeans es un tema que se verá posteriormente.
+
+
+_Figura 8. Advertencia de que la conexión segura no fue posible de realizar._
