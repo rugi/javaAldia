@@ -324,4 +324,75 @@ flowchart TB
     class STD,DYN,OPEN,MODEL,REM,CON leaf;
 ```
 
-_Diagrama 2. Visión general de los componentes que conforman la especificación JMX.._
+_Figura 5. Visión general de los componentes que conforman la especificación JMX.._
+
+
+Como podemos ver, es el nivel de instrumentación el que tiene más componentes a revisar, además del modelo de notificación es necesarioconocer los tipos de MBeans que se pueden implementar.
+Por último, para terminar con este gran resumen; la siguiente imagen muestra con más detalle la relación entre componentes y cada uno de losniveles de arquitectura.
+
+<img src="img/jmx_diagram.jpg" border="1">
+
+_Figura 6. Relación entre componentes y los niveles que forman la especificación JMX. Imagen tomada del documento oficial._
+
+Esta última imagen puede parecer un poco compleja, pero, como veremos, la complejidad puede manejarse muy bien aislando los componentes yrevisándolos uno a uno.
+
+Por ello, iniciaremos con el primer nivel, el de instrumentación. Crearemos un Mbean standard y conoceremos una manera sencilla para interactuarcon él.
+
+_Manos a la obra._
+
+## El 1er nivel.
+
+### Nivel de instrumentación.
+
+El primer nivel de la especificación es este, el de instrumentación, es el más ligero. Aquí es dónde se definen los recursos que queremosadministrar.
+
+La pieza clave de este nivel es el MBean. Así que, veamos de que se trata.
+
+### Managed MBean.
+
+En términos sencillos, un MBean es una clase java que implementa una interface en específico y sigue cierto patrón en su implementación. Elobjetivo de seguir estas reglas es que el nivel superior, el nivel de agentes, pueda manipularlo de manera automática sin problemas; muy a su estiloJava ya tenía su manera de hacer
+Convention over Configuration.
+
+El objetivo es que el MBean defina de manera sencilla e inequívoca:
+
+* Operaciones que puedan ser invocadas.
+* Atributos que puedan ser accedidos.
+* Notificaciones que puedan ser emitidas
+* Constructores que puedan ser utilizados.
+
+Los atributos siguen la convención que todos conocemos, si queremos tener un atributo en nuestro MBean debemos proporcionar un _getter_ y un _setter_ para cada uno de ellos.
+
+Todo lo que definamos (siguiendo las reglas) en el MBean estará disponible para el agente.
+
+La especificación define 4 tipos de MBeans.
+
+| Tipo | ¿Cuándo usarlo? | Características |
+|------|-----------------|-----------------|
+| **Standard MBean** | Cuando el recurso es estable y conocido desde el diseño. | Fácil de implementar, interfaz fija y tipado fuerte. |
+| **Dynamic MBean** | Cuando los atributos u operaciones pueden cambiar en tiempo de ejecución. | Flexible, implementa `DynamicMBean`, mayor complejidad. |
+| **Open MBean** | Cuando el recurso debe ser interoperable con herramientas genéricas de gestión. | Usa `Open Types`, es auto-descriptivo y portable. |
+| **Model MBean** | Cuando se requiere máxima configurabilidad sin modificar el código. | Configurable, auto-descriptivo y orientado a componentes reutilizables. |
+
+
+### Notification Model.
+Este nivel de la especificación define también un modelo genérico de notificación basado en el modelo de eventos de java. Las notificaciones laspuede emitir tanto un MBean como un server de MBeans.
+La especificación define:
+
+* Los objetos para realizar la notificación
+* Interfaces para implementar los <Listeners>.
+* Interfaces para implementar el <broadcast>
+
+Esto tanto para los que envían como los que reciben las notificaciones. Aquí también se definen los servicios necesarios para que estasnotificaciones puedan ser funcionales de manera remota.
+MBean Metadata Classes.
+
+Todos los anteriores MBean realmente extienden a este MBean. Estás clases contienen la estructura que describen todos los componentes de lainterface que maneja los MBeans, esto es:
+* Atributos
+* Operaciones
+* Notificaciones y
+*Constructores.
+
+Es el servidor de MBean el que proporciona todos estos metadatos, y el que se encarga de implementarlos.
+
+Ahora, continuamos revisando una herramienta que seguramente ya has utilizado.
+
+## JConsole
