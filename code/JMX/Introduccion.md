@@ -423,6 +423,7 @@ Esto abrirá JConsole. La 1er pantalla nos permite elegir entre los procesos loc
 Vamos a conectarnos al proceso del propio JConsole. Es decir, usaremos JConsole, para revisar JConsole ;) .
 
 <img src="img/JConsole_01.png/" border="1">
+
 _Figura 7. La propia JConsole tiene expuestos MBeans para poder supervisarla._
 
 Después de hacer doble _click_ sobre el proceso al cual nos queremos conectar nos va a aparecer una advertencia de seguridad, esto se debe a que el servidor local de _MBeans_ por
@@ -431,6 +432,7 @@ _ default_ no están asegurados.
 El aseguramiento de servidores de MBeans es un tema que se verá posteriormente.
 
  <img src="img/JConsole_02.png/" border="1">
+ 
 _Figura 8. Advertencia de que la conexión segura no fue posible de realizar._
 
 
@@ -439,6 +441,7 @@ Debemos aceptar que usaremos una conexión insegura. Con esto, podemos continuar
 La primera pantalla que vemos nos muestra el consumo de recursos de JConsole, en la parte superior podemos ver todas las  fichas/tabs que ofrece la IU.
 
 <img src="img/JConsole_02a.png/" border="1">
+
 _Figura 9. Monitor principal del JConsole._
 
 La pantalla inicial seguramente es ya conocida, nos muestra indicadores de desempeño del proceso: heap, threads, clases cargadas, y uso de CPU.
@@ -451,16 +454,19 @@ Como se puede ver, la lista de MBeans es extensa y se encuentran organizados en 
 El listado que aparece en esta pestaña representa todos los MBeans disponibles en esta conexión.
 
 <img src="img/JConsole_03.png/" border="1">
+
 _Figura 10. Ficha MBeans dentro de JConsole, mostrando los MBeans disponibles._
 
 Hay un MBean debajo de `java.lang`, llamado `Memory`, si hacemos _click_ sobre el `MBean` podemos ver sus principales propiedades, entre ellas hay una llamada _Object Name_, conoceremos en un momento su importancia.
 
 <img src="img/JConsole_04.png/" border="1">
+
 _Figura 11. El object name del MBean que opera sobre la memoria._
 
 Ahora, si hacemos click en él podremos ver las operaciones que expone.
 
 <img src="img/JConsole_05.png/" border="1">
+
 _Figura 12. Existe un MBean que permite invocar el Garbage Collector._
 
 La operación invoca al Garbage Collector _(realmente, como sabemos, GC() sólo sugiere la invocación, es la JVM la que decide ejecutarla o no)_.
@@ -468,6 +474,7 @@ La operación invoca al Garbage Collector _(realmente, como sabemos, GC() sólo 
 Si hacemos _click_ en el botón, se realiza la invocación, y si regresamos a la pestaña inicial podremos ver los efectos.
 
 <img src="img/JConsole_06.png/" border="1">
+
 _Figura 13. Los efectos de invocar el Garbage Collector._
 
 El tamaño de la memoria disminuye, pero, tiene un costo: uso de CPU.
@@ -475,3 +482,69 @@ El tamaño de la memoria disminuye, pero, tiene un costo: uso de CPU.
 Podemos cerrar JConsole, más adelante lo volveremos a usar.
 
 ### Nuestro primer MBean standard.
+
+Ahora que ya sabemos cómo crear un MBean Standard, y ya sabemos cómo interactuar con uno usando JConsole, lo que necesitamos es unaaplicación que podamos monitorear y/o administrar.
+Usaremos una aplicación sencilla, será sólo una clase java.
+
+Esta clase te resultará conocida, es el ejemplo clásico para manejo de ciclos, en este caso un do-while.
+
+El ejemplo hace uso de la clase Scanner para esperar una entrada por el teclado.
+
+Una vez que se recibe la entrada de teclado (texto seguido de ENTER) se compara con una palabra de control, la cual termina con el ciclo. Si lapalabra introducida no es la palabra de control, el ciclo continúa.
+
+Nos apoyamos en una clase llamada Adivina, el objetivo de esta clase es ir almacenando las palabas que se van introduciendo, además de guardarel valor de la palabra de control.
+
+Tiene dos métodos que nos ayudan a saber el número de palabas introducidas y la lista de las mismas.
+
+Un ejemplo muy sencillo pero suficiente para mostrar el uso de un MBean standard.
+
+### Nuestro ejemplo.
+
+``` java 
+package mx.sps.juegos;
+import java.lang.management.ManagementFactory; 
+import java.util.ArrayList; 
+import java.util.List; 
+import java.util.Scanner; 
+import javax.management.MBeanServer; 
+import javax.management.ObjectName;
+
+import mx.sps.mbeans.Control;
+
+/** * * @author RuGI (S&P Solutions) */ 
+public class Adivina {
+
+    private List<String> words;
+    private StringBuffer endControl;
+
+    public Adivina(List<String> words, String endWord) {
+        super();
+        this.words = words;
+        this.endControl = new StringBuffer(endWord);
+    }
+
+    public void addWord(String word) {
+        this.words.add(word);
+    }
+
+    public int getNumberWords() {
+        return this.words.size();
+    }
+
+    public List<String> getWords() {
+        return this.words;
+    }
+
+    public static void main(String[] args) throws Exception {
+        Adivina adivina = new Adivina(new ArrayList<String>(), "END");
+        Scanner keyboard = new Scanner(System.in);
+        String input;
+        do {
+            input = keyboard.nextLine();
+            System.out.println("Escribiste:" + input);
+            adivina.addWord(input);
+        } while (!input.equals(adivina.endControl.toString()));
+        System.out.println("Adivinaste en [" + adivina.getNumberWords() + "] intentos.");
+    }//main
+}//class
+```
