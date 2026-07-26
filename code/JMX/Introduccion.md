@@ -227,6 +227,7 @@ Este nivel, además de los MBeans define las especificaciones para proporcionar 
 Como todo nivel jerárquico, los elementos de este nivel, los _JMX manageable resource_ son manejados (de manera automática) por el siguientenivel: los agentes.
 
 <img src="img/figura03.png" border="1">
+
 _Figura 3. Nivel de instrumentación y sus componentes._
 
 ### Nivel de agentes.
@@ -247,6 +248,7 @@ Para ello la especificación agrega dos conceptos: Adaptadores y conectores, son
 Como en el nivel anterior, este nivel solo se _"preocupa"_ por cumplir su parte de la especificación y los niveles adyacentes se encargarán de trabajaren conjunto.
 
 <img src="img/figura04.png" border="1">
+
 _Figura 4. Nivel de Agente y sus componentes._
 
 
