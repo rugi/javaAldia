@@ -397,15 +397,26 @@ Ahora, continuamos revisando una herramienta que seguramente ya has utilizado.
 
 ## JConsole
 
-JConsole es la herramienta que proporciona el JDK para poder acceder a los servidores de MBeans, como vimos anteriormente, es en estosservidores donde se hospedan los MBeans.
+JConsole es la herramienta que proporciona el JDK para poder acceder a los servidores de MBeans, como vimos anteriormente, es en estos servidores donde se hospedan los MBeans.
 JConsole permite acceder tanto servidores locales como remotos, iniciaremos primero conociendo como conectarnos a un servidor local y enentregas posteriores veremos cómo conectarnos a servidores remotos.
-Iniciando.
+
+### Iniciando.
 
 Si tienes en el PATH local la carpeta /bin del JDK, solamente hay que escribir en una ventana de comandos:
 
 ``` bash
 %>jconsole
 ```
+Si no te reconoce el comando, debes agregar la carpeta bin de tu JDK al PATH, o acceder directamente a la carpeta y escribir:
+
+``` bash
+path_jdk/bin%>jconsole
+```
+o
+``` powershell
+path_jdk/bin%>jconsole.exe
+```
+
 
 Esto abrirá JConsole. La 1er pantalla nos permite elegir entre los procesos locales que están ejecutándose sobre nuestra JVM, todos ellos hacenuso de un servidor MBean local.
 
