@@ -155,7 +155,7 @@ flowchart LR
     ADM --> APP
     ADM --> NET
 ```
-_Figura 2. Todo lo que podemos hacer con JMX._
+_Diagrama 1. Todo lo que podemos hacer con JMX._
 
 
 
@@ -192,6 +192,7 @@ La especificación requiere 3 niveles de abstracción:
 Estos 3 niveles en conjunto son los que se encargan de que la especificación pueda funcionar.
 
 
+<img src="img/figura02.png" border="1">
 _Figura 2. Los 3 niveles de abstracción de la JSR 03._
 
 Los niveles pueden verse siguiendo esa jerarquía, de arriba hacia abajo (abajo la más sencilla y sube en complejidad), para indicar la secuencia quese debe seguir para poder implementar o usar JMX en nuestras aplicaciones java.
@@ -225,6 +226,7 @@ Este nivel, además de los MBeans define las especificaciones para proporcionar 
 
 Como todo nivel jerárquico, los elementos de este nivel, los _JMX manageable resource_ son manejados (de manera automática) por el siguientenivel: los agentes.
 
+<img src="img/figura03.png" border="1">
 _Figura 3. Nivel de instrumentación y sus componentes._
 
 ### Nivel de agentes.
@@ -244,6 +246,7 @@ Para ello la especificación agrega dos conceptos: Adaptadores y conectores, son
 
 Como en el nivel anterior, este nivel solo se _"preocupa"_ por cumplir su parte de la especificación y los niveles adyacentes se encargarán de trabajaren conjunto.
 
+<img src="img/figura04.png" border="1">
 _Figura 4. Nivel de Agente y sus componentes._
 
 
