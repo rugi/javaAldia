@@ -193,6 +193,7 @@ Estos 3 niveles en conjunto son los que se encargan de que la especificación pu
 
 
 <img src="img/figura02.png" border="1">
+
 _Figura 2. Los 3 niveles de abstracción de la JSR 03._
 
 Los niveles pueden verse siguiendo esa jerarquía, de arriba hacia abajo (abajo la más sencilla y sube en complejidad), para indicar la secuencia quese debe seguir para poder implementar o usar JMX en nuestras aplicaciones java.
