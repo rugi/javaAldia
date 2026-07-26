@@ -459,19 +459,21 @@ _Figura 10. Ficha MBeans dentro de JConsole, mostrando los MBeans disponibles._
 
 Hay un MBean debajo de `java.lang`, llamado `Memory`, si hacemos _click_ sobre el `MBean` podemos ver sus principales propiedades, entre ellas hay una llamada _Object Name_, conoceremos en un momento su importancia.
 
+Ahora, si hacemos click en él podremos ver las operaciones que expone.
+
 <img src="img/JConsole_04.png/" border="1">
 
 _Figura 11. El object name del MBean que opera sobre la memoria._
 
-Ahora, si hacemos click en él podremos ver las operaciones que expone.
+La operación invoca al Garbage Collector _(realmente, como sabemos, GC() sólo sugiere la invocación, es la JVM la que decide ejecutarla o no)_.
+
+Si hacemos _click_ en el botón, se realiza la invocación.
 
 <img src="img/JConsole_05.png/" border="1">
 
 _Figura 12. Existe un MBean que permite invocar el Garbage Collector._
 
-La operación invoca al Garbage Collector _(realmente, como sabemos, GC() sólo sugiere la invocación, es la JVM la que decide ejecutarla o no)_.
-
-Si hacemos _click_ en el botón, se realiza la invocación, y si regresamos a la pestaña inicial podremos ver los efectos.
+y si regresamos a la pestaña inicial podremos ver los efectos.
 
 <img src="img/JConsole_06.png/" border="1">
 
