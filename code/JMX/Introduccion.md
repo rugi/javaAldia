@@ -241,7 +241,7 @@ Este nivel se puede englobar en dos grandes componentes:
 
 * El MBean Server
 * Servicios para manipular los MBeans.
-* 
+
 Para ir familiarizándonos con la tecnología, tanto el servidor de MBeans como nuestro _JMX manageable resource_ a instrumentar vivirán en laJVM, pero, lo realmente poderoso de JMX es tener al servidor en otro contexto de ejecución.
 
 Para ello la especificación agrega dos conceptos: Adaptadores y conectores, son componentes de comunicación que permiten unir al Server MBeancon el resto del mundo. Por ahora sólo es necesario que conozcamos de su existencia.
@@ -252,4 +252,76 @@ Como en el nivel anterior, este nivel solo se _"preocupa"_ por cumplir su parte 
 
 _Figura 4. Nivel de Agente y sus componentes._
 
+### Nivel de servicios distribuidos.
 
+Este último nivel proporciona un conjunto de interfaces para implementar _JMX managers_.
+
+En este nivel se definen una serie de interfaces cuyas tareas son:
+
+* Proporcionar una interface para supervisar aplicaciones, para interactuar de manera transparente con el agente y los recursos que administra através de un conector.
+* Distribuir información para la supervisión desde plataformas de supervisión de alto nivel hacia varios agentes JMX.
+* Consolidar la información de supervisión procedente de numerosos agentes JMX en vistas lógicas que son relevantes para las operacionescomerciales del usuario final.
+* Proveer seguridad.
+
+En este nivel se implementan mecanismos de cooperación a través de la red, es justo aquí donde se proporcionan implementan las funcionalidadesde distribución, escalabilidad y supervisión. 
+
+Es aquí también dónde se construyen las extensiones y demás mecanismos para hace de estatecnología adaptable, dinámica y segura.
+
+## Componentes.
+
+Ahora, ya que conocemos los niveles de abstracción, lo que sigue es conocer a detalle que componentes conforman cada uno de estos niveles.
+
+```mermaid
+flowchart TB
+
+    CO["JMX Architecture"]
+
+    CO --> IL["Instrumentation Level"]
+    CO --> AL["Agent Level"]
+    CO --> DSL["Distributed Services Level"]
+
+    %% Instrumentation
+    IL --> MB["MBeans"]
+    IL --> NM["Notification Model"]
+    IL --> MMC["Metadata Classes"]
+
+    MB --> STD["Standard"]
+    MB --> DYN["Dynamic"]
+    MB --> OPEN["Open"]
+    MB --> MODEL["Model"]
+
+    %% Agent
+    AL --> MBS["MBean Server"]
+    AL --> AS["Agent Services"]
+
+    %% Distributed
+    DSL --> REM["Remote Connectors"]
+    DSL --> CON["Management Clients"]
+
+    %% ===== Styles =====
+
+    classDef root fill:#ECECEC,stroke:#555,color:#000,font-weight:bold;
+
+    classDef instrumentation fill:#D9ECFF,stroke:#4A90E2,color:#003366,font-weight:bold;
+
+    classDef agent fill:#DDF5DD,stroke:#4CAF50,color:#205522,font-weight:bold;
+
+    classDef distributed fill:#FFE9CC,stroke:#F39C12,color:#7A4300,font-weight:bold;
+
+    classDef leaf fill:#FFFFFF,stroke:#999,color:#000;
+
+    class CO root;
+
+    class IL instrumentation;
+    class MB,NM,MMC,STD,DYN,OPEN,MODEL instrumentation;
+
+    class AL agent;
+    class MBS,AS agent;
+
+    class DSL distributed;
+    class REM,CON distributed;
+
+    class STD,DYN,OPEN,MODEL,REM,CON leaf;
+```
+
+_Diagrama 2. Visión general de los componentes que conforman la especificación JMX.._
