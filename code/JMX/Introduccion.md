@@ -430,5 +430,5 @@ _ default_ no están asegurados.
 
 El aseguramiento de servidores de MBeans es un tema que se verá posteriormente.
 
-
+ 
 _Figura 8. Advertencia de que la conexión segura no fue posible de realizar._
