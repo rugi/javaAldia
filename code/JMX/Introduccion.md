@@ -1,4 +1,4 @@
-# Fundamentos
+# JMX. La guia perdida. Fundamentos. Re-edición 2026.
 
 ## Alcance.
 El presente documento detalla en principio los fundamentos teóricos de la especificación 003. Java Management Extensions (JMX). Detalla cómo
