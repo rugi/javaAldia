@@ -856,16 +856,16 @@ Sirve que me entero que alguien ha llegado hasta acá.
 
 Enlaces.
 * JSR-000003: JavaTM Management Extensions (JMX) Specification:
-  *https://jcp.org/en/jsr/detail?id=3
+  * https://jcp.org/en/jsr/detail?id=3
 
 * JSR-000003 JavaTM Management Extensions (JMX) (Maintenance Release 4):
-  *https://jcp.org/aboutJava/communityprocess/mrel/jsr003/index4.html
+  * https://jcp.org/aboutJava/communityprocess/mrel/jsr003/index4.html
 
 * JSR 000255 - JMX Specification, version 2.0:
-  *https://jcp.org/en/jsr/detail?id=255
+  * https://jcp.org/en/jsr/detail?id=255
 
 * JSR 160: Java Management Extensions (JMX) Remote API:
-  *https://jcp.org/en/jsr/detail?id=160
+  * https://jcp.org/en/jsr/detail?id=160
 
 * De la medición y otras cosas:
-  *https://www.linkedin.com/pulse/de-la-medici%C3%B3n-y-otras-cosas-isaac-ruiz-guerra
+  * https://www.linkedin.com/pulse/de-la-medici%C3%B3n-y-otras-cosas-isaac-ruiz-guerra
