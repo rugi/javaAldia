@@ -8,6 +8,7 @@ crear un Standard MBean y pone las bases para continuar con la exploración de l
 **Nota:**
 
 _Este documento se publicó en Diciembre del 2016 en Oracle Technology Network, lo publico nuevamente para su mejor lectura pues la red OTN ha tenido cambios y algunos artículos dejaron de estar disponibles, incluyendo este._
+
 _Puedes ver una versión en PDF del artículo original aquí:_
 <a href="https://github.com/rugi/javaAldia/tree/main/ext/pdf">Respaldo de artículos de JMX en OTN.</a>
 </blockquote>
