@@ -560,10 +560,14 @@ Dado que solo es una clase, puedes compilarla directamente y ejecutarla:
 %>java mx.sps.juegos.Adivina
 Alfa 
 Escribiste:Alfa 
-Bravo Escribiste:Bravo 
-Delta Escribiste:Delta 
-End Escribiste:End 
-END Escribiste:END 
+Bravo
+Escribiste:Bravo 
+Delta
+Escribiste:Delta 
+End
+Escribiste:End 
+END
+Escribiste:END 
 Adivinaste en [5] intentos.
 ```
 
@@ -585,9 +589,7 @@ Nuestra interface queda así.
 
 ``` java
 package mx.sps.mbeans;
-/** 
-* @author RuGI (S&P Solutions)
-*/
+
 public interface ControlMBean {
     public String lastMessage();
     public int attempts();
@@ -598,7 +600,35 @@ public interface ControlMBean {
 La implementación recibe en su constructor la lista de palabras, a partir de ahí podrá realizar las operaciones anteriores.
 
 ``` java
-FALTA
+package mx.sps.mbeans;
+
+import java.util.List;
+ 
+public class Control implements ControlMBean {
+    
+    private List<String> words;
+    
+    public Control(List<String> words){ 
+        super(); 
+        this.words = words;
+    }
+
+    @Override 
+    public String lastMessage() { 
+        return (this.words.size()>0)? 
+                this.words.get(this.words.size()-1): null; 
+    }
+
+    @Override public int attempts() { 
+        return this.words.size(); 
+    }
+
+    @Override 
+    public void clear() { 
+        System.out.println ("Que suerte!. Se ha reiniciado su contador de intentos. "); 
+        this.words.clear(); 
+    }
+}
 ```
 
 ### Registro del MBean en el servidor por default.
@@ -636,18 +666,19 @@ MBeanServerFactory.createMBeanServer method and registers each platform MXBean i
 | **Método relacionado** | `MBeanServerFactory.createMBeanServer()` |
 | **Caso de uso** | Punto de entrada principal para registrar MBeans propios o acceder a los MXBeans proporcionados por la JVM. |
 
-Lo que haremos será agregar nuestro MBean a este servidor, de esta manera nuestro MBean será visible vía el JConsole.
-Para hacer esto necesitamos que nuestro MBean tenga un nombre único y eso se logra asignándole un <Object Name>.
+Lo que haremos será agregar nuestro _MBean_ a este servidor, de esta manera nuestro _MBean_ será visible vía el JConsole.
+Para hacer esto necesitamos que nuestro _MBean_ tenga un nombre único y eso se logra asignándole un _Object Name_.
 
 ## ObjectName.
-Para que nuestro MBean tenga una manera inequívoca de referenciarlo, requerimos darle un nombre al momento de registrarlo dentro del servidorde MBeans, este nombre se asigna con la clase:
-ObjectName.
+Para que nuestro _MBean_ tenga una manera inequívoca de referenciarlo, requerimos darle un nombre al momento de registrarlo dentro del servidor de _MBeans_, este nombre se asigna con la clase:
+`ObjectName`.
 
-El _Object Name_ es la manera que tiene el servidor de MBeans para identificar de manera inequívoca a un MBean. Dado que el servidor puederecibir MBeans de muchos proveedores, es necesario seguir cierta convención para evitar colisiones de nombres.
+El _Object Name_ es la manera que tiene el servidor de MBeans para identificar de manera inequívoca a un MBean. 
+Dado que el servidor puede recibir _MBeans_ de muchos proveedores, es necesario seguir cierta convención para evitar colisiones de nombres.
 
-El _Object Name_ es importante ya que es a través de él que son invocadas las operaciones expuestas en cada MBean.
+El _Object Name_ es importante ya que es a través de él que son invocadas las operaciones expuestas en cada _MBean_.
 
-La clase ObjectName es la que representa este _Object Name_ y para asegurar que las colisiones existan sigue el siguiente mecanismo paranombrarlo:
+La clase `ObjectName` es la que representa este _Object Name_ y para asegurar que las colisiones existan sigue el siguiente mecanismo paranombrarlo:
 
 El _Object Name_ está compuesto de 2 partes:
 * Un nombre de dominio.
@@ -668,8 +699,9 @@ Dado que la idea es mantener un orden en el nombrado, una sugerencia es seguir l
 
 Para nuestro ejemplo, nuestro nombre de dominio será:
 
+```
 mx.com.spsolutions.jmxtutorial
-
+```
 # Propiedades.
 Las propiedades sirven para complementar el nombre del dominio y darle así un nombre único.
 Cada propiedad es una combinación de `llave=valor`, y no necesariamente se refieren a propiedades del MBean, sirven sólo para completar el nombrado y para efectos de organización de los MBeans.
@@ -685,8 +717,8 @@ El valor de la propiedad puede ser cualquier secuencia de caracteres exceptuando
 | * | Asterisco |
 | ? | Signo de interrogación de cierre|
 
-Usaremos sólo una propiedad para nuestro MBean, la llave será:
-type y el valor:Control, así:
+Usaremos sólo una propiedad para nuestro _MBean_, la llave será:
+`type` y el valor:`Control```, así:
 
 ``` java
 type=Control
@@ -760,8 +792,6 @@ mx.com.spsolutions.jmxtutorial:type=Control
 
 Teniendo el nombre, lo que falta entonces es registrarlo:
 
-Teniendo el nombre, lo que falta entonces es registrarlo:
-
 ``` java
     Adivina adivina = new Adivina(new ArrayList<String>(), "END");
     MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
@@ -769,14 +799,63 @@ Teniendo el nombre, lo que falta entonces es registrarlo:
     Control mbean = new Control(adivina.getWords());mbs.registerMBean(mbean, name);
 ``` 
 
-
 Y listo, con esto nuestro MBean está registrado en el servidor por _default_ de _MBeans_.
 
 ### Nuestro ejemplo completo.
 Este es nuestro código ya completo:
 
 ``` java
-FALTA
+import java.lang.management.ManagementFactory;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import javax.management.MBeanServer;
+import javax.management.ObjectName;
+import mx.sps.mbeans.Control;
+
+public class Adivina {
+
+    private List<String> words;
+    private StringBuffer endControl;
+
+    public Adivina(List<String> words, String endWord) {
+        super();
+        this.words = words;
+        this.endControl = new StringBuffer(endWord);
+    }
+
+    public void addWord(String word) {
+        this.words.add(word);
+    }
+
+    public int getNumberWords() {
+        return this.words.size();
+    }
+
+    public List<String> getWords() {
+        return this.words;
+    }
+
+    public static void main(String[] args) throws Exception {
+        Adivina adivina = new Adivina(new ArrayList<String>(), "END");
+        //--
+        MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
+        ObjectName name
+                = new ObjectName("mx.com.spsolutions.jmxtutorial:type=Control");
+        Control mbean = new Control(adivina.getWords());
+        mbs.registerMBean(mbean, name);
+        //--
+        Scanner keyboard = new Scanner(System.in);
+        String input;
+        do {
+            input = keyboard.nextLine();
+            System.out.println("Escribiste:" + input);
+            adivina.addWord(input);
+        } while (!input.equals(adivina.endControl.toString()));
+        System.out.println("Adivinaste en [" + adivina.getNumberWords() + "] intentos.");
+    }//main
+}//class
+
 ``` 
 
 Ahora compilamos la interface, la implementación, nuestra clase principal y la ejecutamos.
@@ -788,13 +867,14 @@ Ahora compilamos la interface, la implementación, nuestra clase principal y la 
 ```
 
 Ya estamos listos para ejecutar la aplicación y poder ver el MBean en acción.
-Visualizando nuestro MBean con Jconsole.
+
+### Visualizando nuestro MBean con Jconsole.
 
 Ya compilado el código, ejecutamos la clase principal:
 ```  shell
 %>java mx.sps.juegos.Adivina
 ``` 
-Con nuestra aplicación en ejecución, vamos a abrir el Jconsole.
+Con nuestra aplicación en ejecución, vamos a abrir el Jconsole en otra ventana.
 
 ```  shell
 %>JConsole
@@ -804,9 +884,8 @@ Ahora, al iniciar, debe de aparecer el proceso sobre el cual se encuentra en eje
 
 Lo seleccionamos:
 
-``` java
-FALTA
-```
+<img src="img/JConsole_07.png" border="1"> 
+
 _Figura 14. Proceso de nuestro juego listo para ser accedido por JConsole._
 
 Volverá a aparecernos la advertencia de seguridad, continuamos como en los casos anteriores.
@@ -814,9 +893,9 @@ Nos vamos directamente a la ficha de MBeans, _¡y voilá!_ Nuestro MBean debe de
 
 Se puede ver que el agrupador de nuestro MBean es el nombre de dominio que pusimos en el ObjectName.
 
-``` java
-FALTA
-```
+
+<img src="img/JConsole_08.png" border="1"> 
+
 _Figura 15. Nuestro MBean visto desde JConsole._
 
 ### Invocando operaciones.
@@ -827,17 +906,13 @@ La primera operación que podemos invocar es attempts, nos debe de regresar 0, p
 
 Intenta ahora jugar un rato con la aplicación y después de varios intentos invoca las operaciones restantes.
 
-``` java
-FALTA
-```
+ <img src="img/JConsole_10.png" border="1"> 
 _Figura 16. Invocación de una de nuestras operaciones expuestas en nuestro MBean._
 
 Si invocamos la operación `clear()`, debemos de ver el mensaje en la consola donde estamos ejecutando la clase principal.
 
 
-``` java
-FALTA
-```
+  <img src="img/JConsole_10a.png" border="1"> 
 _Figura 17. Mensaje indicando que una operación se ha realizado exitosamente._
 
 ```shell
@@ -845,9 +920,7 @@ _Figura 17. Mensaje indicando que una operación se ha realizado exitosamente._
 Que suerte!. Se ha reiniciado su contador de intentos.
 ```
 
-``` java
-FALTA
-```
+<img src="img/JConsole_11.png" border="1"> 
 
 _Figura 18. JConsole invocando la operación de clear y su efecto en la aplicación en ejecución._
 
@@ -863,7 +936,7 @@ Diseñada tanto para aplicaciones como para recursos de red, JMX es una opción 
 Con este documento tienes ahora las bases para poder incorporar MBeans standards a tus aplicaciones.
 
 Ahora puede continuar con la segunda parte de este artículo aquí.
-Si aun no he puesto el link, visita mi perfil de linkedin y ponme un recordatorio ;) 
+Si aun no he puesto el _link_, visita mi perfil de linkedin y ponme un recordatorio ;) 
 
 Sirve que me entero que alguien ha llegado hasta acá.
 
