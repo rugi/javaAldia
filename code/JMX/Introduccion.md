@@ -598,10 +598,12 @@ public interface ControlMBean {
     public int attempts();
     public void clear(); 
 }
-``` java
+```
+
 La implementación recibe en su constructor la lista de palabras, a partir de ahí podrá realizar las operaciones anteriores.
+
 ``` java
-class
+FALTA
 ```
 
 ### Registro del MBean en el servidor por default.
@@ -803,6 +805,9 @@ Ahora, al iniciar, debe de aparecer el proceso sobre el cual se encuentra en eje
 
 Lo seleccionamos:
 
+``` java
+FALTA
+```
 _Figura 14. Proceso de nuestro juego listo para ser accedido por JConsole._
 
 Volverá a aparecernos la advertencia de seguridad, continuamos como en los casos anteriores.
@@ -810,6 +815,9 @@ Nos vamos directamente a la ficha de MBeans, _¡y voilá!_ Nuestro MBean debe de
 
 Se puede ver que el agrupador de nuestro MBean es el nombre de dominio que pusimos en el ObjectName.
 
+``` java
+FALTA
+```
 _Figura 15. Nuestro MBean visto desde JConsole._
 
 ### Invocando operaciones.
@@ -820,16 +828,26 @@ La primera operación que podemos invocar es attempts, nos debe de regresar 0, p
 
 Intenta ahora jugar un rato con la aplicación y después de varios intentos invoca las operaciones restantes.
 
+``` java
+FALTA
+```
 _Figura 16. Invocación de una de nuestras operaciones expuestas en nuestro MBean._
 
 Si invocamos la operación `clear()`, debemos de ver el mensaje en la consola donde estamos ejecutando la clase principal.
 
 
+``` java
+FALTA
+```
 _Figura 17. Mensaje indicando que una operación se ha realizado exitosamente._
 
 ```shell
 %> java mx.sps.juegos.Adivina
 Que suerte!. Se ha reiniciado su contador de intentos.
+```
+
+``` java
+FALTA
 ```
 
 _Figura 18. JConsole invocando la operación de clear y su efecto en la aplicación en ejecución._
