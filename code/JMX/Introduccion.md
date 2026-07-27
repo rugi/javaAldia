@@ -339,9 +339,9 @@ Por último, para terminar con este gran resumen; la siguiente imagen muestra co
 
 _Figura 6. Relación entre componentes y los niveles que forman la especificación JMX. Imagen tomada del documento oficial._
 
-Esta última imagen puede parecer un poco compleja, pero, como veremos, la complejidad puede manejarse muy bien aislando los componentes yrevisándolos uno a uno.
+Esta última imagen puede parecer un poco compleja, pero, como veremos, la complejidad puede manejarse muy bien aislando los componentes y revisándolos uno a uno.
 
-Por ello, iniciaremos con el primer nivel, el de instrumentación. Crearemos un Mbean standard y conoceremos una manera sencilla para interactuarcon él.
+Por ello, iniciaremos con el primer nivel, el de instrumentación. Crearemos un _Mbean standard_ y conoceremos una manera sencilla para interactuar con él.
 
 _Manos a la obra._
 
@@ -349,14 +349,16 @@ _Manos a la obra._
 
 ### Nivel de instrumentación.
 
-El primer nivel de la especificación es este, el de instrumentación, es el más ligero. Aquí es dónde se definen los recursos que queremosadministrar.
+El primer nivel de la especificación es este, el de instrumentación, es el más ligero. Aquí es dónde se definen los recursos que queremos administrar.
 
 La pieza clave de este nivel es el MBean. Así que, veamos de que se trata.
 
 ### Managed MBean.
 
-En términos sencillos, un MBean es una clase java que implementa una interface en específico y sigue cierto patrón en su implementación. Elobjetivo de seguir estas reglas es que el nivel superior, el nivel de agentes, pueda manipularlo de manera automática sin problemas; muy a su estiloJava ya tenía su manera de hacer
-Convention over Configuration.
+En términos sencillos, un _MBean_ es una clase java que implementa una interface en específico y sigue cierto patrón en su implementación. 
+
+El objetivo de seguir estas reglas es que el nivel superior, el nivel de agentes, pueda manipularlo de manera automática sin problemas; muy a su estilo Java ya tenía su manera de hacer
+_Convention over Configuration_.
 
 El objetivo es que el MBean defina de manera sencilla e inequívoca:
 
@@ -367,7 +369,7 @@ El objetivo es que el MBean defina de manera sencilla e inequívoca:
 
 Los atributos siguen la convención que todos conocemos, si queremos tener un atributo en nuestro MBean debemos proporcionar un _getter_ y un _setter_ para cada uno de ellos.
 
-Todo lo que definamos (siguiendo las reglas) en el MBean estará disponible para el agente.
+Todo lo que definamos (siguiendo las reglas) en el _MBean_ estará disponible para el agente.
 
 La especificación define 4 tipos de MBeans.
 
@@ -380,17 +382,20 @@ La especificación define 4 tipos de MBeans.
 
 
 ### Notification Model.
-Este nivel de la especificación define también un modelo genérico de notificación basado en el modelo de eventos de java. Las notificaciones laspuede emitir tanto un MBean como un server de MBeans.
+Este nivel de la especificación define también un modelo genérico de notificación basado en el modelo de eventos de java. 
+
+Las notificaciones las puede emitir tanto un MBean como un server de MBeans.
 La especificación define:
 
 * Los objetos para realizar la notificación
 * Interfaces para implementar los _Listeners_.
 * Interfaces para implementar el _broadcast_.
 
-Esto tanto para los que envían como los que reciben las notificaciones. Aquí también se definen los servicios necesarios para que estasnotificaciones puedan ser funcionales de manera remota.
-MBean Metadata Classes.
+Esto tanto para los que envían como los que reciben las notificaciones. Aquí también se definen los servicios necesarios para que estas notificaciones puedan ser funcionales de manera remota.
 
-Todos los anteriores MBean realmente extienden a este MBean. Estás clases contienen la estructura que describen todos los componentes de lainterface que maneja los MBeans, esto es:
+### MBean Metadata Classes.
+
+Todos los anteriores MBean realmente extienden a este MBean. Estás clases contienen la estructura que describen todos los componentes de la interface que maneja los MBeans, esto es:
 * Atributos
 * Operaciones
 * Notificaciones y
@@ -403,7 +408,8 @@ Ahora, continuamos revisando una herramienta que seguramente ya has utilizado.
 ## JConsole
 
 JConsole es la herramienta que proporciona el JDK para poder acceder a los servidores de MBeans, como vimos anteriormente, es en estos servidores donde se hospedan los MBeans.
-JConsole permite acceder tanto servidores locales como remotos, iniciaremos primero conociendo como conectarnos a un servidor local y enentregas posteriores veremos cómo conectarnos a servidores remotos.
+
+JConsole permite acceder tanto servidores locales como remotos, iniciaremos primero conociendo como conectarnos a un servidor local y en entregas posteriores veremos cómo conectarnos a servidores remotos.
 
 ### Iniciando.
 
@@ -423,9 +429,11 @@ path_jdk/bin%>jconsole.exe
 ```
 
 
-Esto abrirá JConsole. La 1er pantalla nos permite elegir entre los procesos locales que están ejecutándose sobre nuestra JVM, todos ellos hacenuso de un servidor MBean local.
+Esto abrirá JConsole. La 1er pantalla nos permite elegir entre los procesos locales que están ejecutándose sobre nuestra JVM, todos ellos hacen uso de un servidor MBean local.
 
-Vamos a conectarnos al proceso del propio JConsole. Es decir, usaremos JConsole, para revisar JConsole ;) .
+Vamos a conectarnos al proceso del propio JConsole. 
+
+Es decir, usaremos JConsole, para revisar JConsole ;) .
 
 <img src="img/JConsole_01.png/" border="1">
 
@@ -490,16 +498,17 @@ Podemos cerrar JConsole, más adelante lo volveremos a usar.
 
 ### Nuestro primer MBean standard.
 
-Ahora que ya sabemos cómo crear un MBean Standard, y ya sabemos cómo interactuar con uno usando JConsole, lo que necesitamos es unaaplicación que podamos monitorear y/o administrar.
+Ahora que ya sabemos cómo crear un MBean Standard, y ya sabemos cómo interactuar con uno usando JConsole, lo que necesitamos es una aplicación que podamos monitorear y/o administrar.
+
 Usaremos una aplicación sencilla, será sólo una clase java.
 
 Esta clase te resultará conocida, es el ejemplo clásico para manejo de ciclos, en este caso un do-while.
 
 El ejemplo hace uso de la clase Scanner para esperar una entrada por el teclado.
 
-Una vez que se recibe la entrada de teclado (texto seguido de ENTER) se compara con una palabra de control, la cual termina con el ciclo. Si lapalabra introducida no es la palabra de control, el ciclo continúa.
+Una vez que se recibe la entrada de teclado (texto seguido de ENTER) se compara con una palabra de control, la cual termina con el ciclo. Si la palabra introducida no es la palabra de control, el ciclo continúa.
 
-Nos apoyamos en una clase llamada Adivina, el objetivo de esta clase es ir almacenando las palabas que se van introduciendo, además de guardarel valor de la palabra de control.
+Nos apoyamos en una clase llamada Adivina, el objetivo de esta clase es ir almacenando las palabas que se van introduciendo, además de guardar el valor de la palabra de control.
 
 Tiene dos métodos que nos ayudan a saber el número de palabas introducidas y la lista de las mismas.
 
@@ -554,6 +563,7 @@ public class Adivina {
 
 ### Nuestro ejemplo en ejecución.
 Puedes ejecutar directamente la clase desde línea de comando, o con tu IDE favorito crear un jar y ejecutar la clase desde el jar.
+
 Dado que solo es una clase, puedes compilarla directamente y ejecutarla:
 ``` bash
 %>javac .\mx\sps\juegos\Adivina.java
@@ -632,8 +642,7 @@ public class Control implements ControlMBean {
 ```
 
 ### Registro del MBean en el servidor por default.
-Tenemos ya nuestro MBean y su implementación, ahora solo resta registrarlo en un servidor JMX, afortunadamente existe uno por
-_default_.
+Tenemos ya nuestro MBean y su implementación, ahora solo resta registrarlo en un servidor JMX, afortunadamente existe uno por _default_.
 
 Este servidor de MBeans está accesible gracias a la clase:
 * ManagementFactory
@@ -647,8 +656,9 @@ getPlatformMBeanServer
   
 public static MBeanServer getPlatformMBeanServer()
 
-Returns the platform MBeanServer. On the first call to this method, it first creates the platform MBeanServer by callingthe
-MBeanServerFactory.createMBeanServer method and registers each platform MXBean in this platform MBeanServer with its ObjectName. This method, in subsequent calls, will simply return the initially created platform MBeanServer.
+Returns the platform MBeanServer. On the first call to this method, it first creates the platform MBeanServer by calling the MBeanServerFactory.createMBeanServer method and registers each platform MXBean in this platform MBeanServer with its ObjectName. 
+
+This method, in subsequent calls, will simply return the initially created platform MBeanServer.
 </blockquote>
 
 
@@ -931,9 +941,9 @@ Listo.
 Has creado una aplicación java con un MBean que permite administrar y monitorear parte del estado de la misma.
 
 ## Conclusión.
-La supervisión y administración de aplicaciones no es una tarea sencilla, pero, con JMX una tecnología que existe desde los inicios de la plataformajava se puede facilitar mucho.
+La supervisión y administración de aplicaciones no es una tarea sencilla, pero, con JMX una tecnología que existe desde los inicios de la plataforma java se puede facilitar mucho.
 
-Diseñada tanto para aplicaciones como para recursos de red, JMX es una opción vigente y en expansión para el monitoreo de aplicaciones dentrode la plataforma java.
+Diseñada tanto para aplicaciones como para recursos de red, JMX es una opción vigente y en expansión para el monitoreo de aplicaciones dentro de la plataforma java.
 
 Con este documento tienes ahora las bases para poder incorporar MBeans standards a tus aplicaciones.
 
