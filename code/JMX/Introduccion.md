@@ -555,3 +555,125 @@ public class Adivina {
     }//main
 }//class
 ```
+
+
+### Nuestro ejemplo en ejecución.
+Puedes ejecutar directamente la clase desde línea de comando, o con tu IDE favorito crear un jar y ejecutar la clase desde el jar.
+Dado que solo es una clase, puedes compilarla directamente y ejecutarla:
+``` bash
+%>javac .\mx\sps\juegos\Adivina.java
+%>java mx.sps.juegos.Adivina
+Alfa 
+Escribiste:Alfa 
+Bravo Escribiste:Bravo 
+Delta Escribiste:Delta 
+End Escribiste:End 
+END Escribiste:END 
+Adivinaste en [5] intentos.
+```
+
+### Siguiendo la especificación.
+
+Ahora crearemos nuestro _MBean_, siguiendo la especificación debemos primero crear una interface con las operaciones y los atributos que tendrá nuestro _MBean_.
+
+El nombre de la interface debe terminar con el sufijo: _MBean_.
+
+Como vimos anteriormente, el _MBean_ puede tener atributos y operaciones. Nuestro _MBean_ standard tendrá solamente operaciones, en específico tendrá 3:
+
+| Operación (Operation) | Descripción |
+|-----------------------|-------------|
+| **lastMessage()** | Devuelve la última palabra que el usuario ha introducido mediante el teclado. |
+| **attempts()** | Devuelve el número de intentos realizados durante el ciclo de ejecución actual. |
+| **clear()** | Limpia el historial de palabras registradas durante el ciclo de ejecución actual. |
+
+Nuestra interface queda así.
+
+``` java
+package mx.sps.mbeans;
+/** 
+* @author RuGI (S&P Solutions)
+*/
+public interface ControlMBean {
+    public String lastMessage();
+    public int attempts();
+    public void clear(); 
+}
+``` java
+La implementación recibe en su constructor la lista de palabras, a partir de ahí podrá realizar las operaciones anteriores.
+``` java
+class
+```
+
+### Registro del MBean en el servidor por default.
+Tenemos ya nuestro MBean y su implementación, ahora solo resta registrarlo en un servidor JMX, afortunadamente existe uno por
+_default_.
+
+Este servidor de MBeans está accesible gracias a la clase:
+* ManagementFactory
+Y el método getPlatformMBeanServer
+
+Esto es lo que nos dice la documentación sobre este método:
+https://docs.oracle.com/javase/7/docs/api/java/lang/management/ManagementFactory.html#getPlatformMBeanServer()
+
+<blockquote>
+getPlatformMBeanServer
+  
+public static MBeanServer getPlatformMBeanServer()
+
+Returns the platform MBeanServer. On the first call to this method, it first creates the platform MBeanServer by callingthe
+MBeanServerFactory.createMBeanServer method and registers each platform MXBean in this platform MBeanServer with its ObjectName. This method, in subsequent calls, will simply return the initially created platform MBeanServer.
+</blockquote>
+
+
+## Método: `getPlatformMBeanServer()`
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Clase** | `java.lang.management.ManagementFactory` |
+| **Método** | `getPlatformMBeanServer()` |
+| **Modificadores** | `public static` |
+| **Retorna** | `MBeanServer` |
+| **Descripción** | Devuelve la instancia del **Platform MBeanServer** de la JVM. Si es la primera vez que se invoca este método, crea automáticamente el Platform MBeanServer mediante `MBeanServerFactory.createMBeanServer()` y registra todos los Platform MXBeans con su correspondiente `ObjectName`. En llamadas posteriores simplemente devuelve la misma instancia creada inicialmente. |
+| **Primera invocación** | Crea el Platform MBeanServer y registra todos los Platform MXBeans. |
+| **Invocaciones posteriores** | Devuelve la misma instancia previamente creada (Singleton). |
+| **Método relacionado** | `MBeanServerFactory.createMBeanServer()` |
+| **Caso de uso** | Punto de entrada principal para registrar MBeans propios o acceder a los MXBeans proporcionados por la JVM. |
+
+Lo que haremos será agregar nuestro MBean a este servidor, de esta manera nuestro MBean será visible vía el JConsole.
+Para hacer esto necesitamos que nuestro MBean tenga un nombre único y eso se logra asignándole un <Object Name>.
+
+## ObjectName.
+Para que nuestro MBean tenga una manera inequívoca de referenciarlo, requerimos darle un nombre al momento de registrarlo dentro del servidorde MBeans, este nombre se asigna con la clase:
+ObjectName.
+El _Object Name_ es la manera que tiene el servidor de MBeans para identificar de manera inequívoca a un MBean. Dado que el servidor puederecibir MBeans de muchos proveedores, es necesario seguir cierta convención para evitar colisiones de nombres.
+El _Object Name_ es importante ya que es a través de él que son invocadas las operaciones expuestas en cada MBean.
+La clase ObjectName es la que representa este _Object Name_ y para asegurar que las colisiones existan sigue el siguiente mecanismo paranombrarlo:
+El _Object Name_ está compuesto de 2 partes:
+* Un nombre de dominio.
+* Un listado no ordenado de una o más propiedades.
+
+¿Suena sencillo? Veamos un poco más de cada parte.
+
+### Nombre de dominio.
+El nombre de dominio es una cadena sensible a mayúsculas y minúsculas, puede contener cualquier carácter excepto:
+
+| Char | Motivo |
+|----------|-------------|
+| : | Es el token que indica el fin del nombre de dominio |
+| * | Caracter comodín |
+| ¿ | Caracter comodín |
+
+Dado que la idea es mantener un orden en el nombrado, una sugerencia es seguir la misma convención que damos cuanto nombramos paquetes en java.
+
+Para nuestro ejemplo, nuestro nombre de dominio será:
+
+mx.com.spsolutions.jmxtutorial
+
+# Propiedades.
+Las propiedades sirven para complementar el nombre del dominio y darle así un nombre único.
+Cada propiedad es una combinación de `llave=valor`, y no necesariamente se refieren a propiedades del MBean, sirven sólo para completar el nombrado y para efectos de organización de los MBeans.
+
+El valor de la propiedad puede ser cualquier secuencia de caracteres exceptuando:
+
+
+
