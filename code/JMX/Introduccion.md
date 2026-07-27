@@ -509,16 +509,10 @@ Un ejemplo muy sencillo pero suficiente para mostrar el uso de un MBean standard
 
 ``` java 
 package mx.sps.juegos;
-import java.lang.management.ManagementFactory; 
-import java.util.ArrayList; 
-import java.util.List; 
-import java.util.Scanner; 
-import javax.management.MBeanServer; 
-import javax.management.ObjectName;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-import mx.sps.mbeans.Control;
-
-/** * * @author RuGI (S&P Solutions) */ 
 public class Adivina {
 
     private List<String> words;
@@ -554,6 +548,7 @@ public class Adivina {
         System.out.println("Adivinaste en [" + adivina.getNumberWords() + "] intentos.");
     }//main
 }//class
+
 ```
 
 
