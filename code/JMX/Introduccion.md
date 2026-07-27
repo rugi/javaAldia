@@ -907,12 +907,14 @@ La primera operación que podemos invocar es attempts, nos debe de regresar 0, p
 Intenta ahora jugar un rato con la aplicación y después de varios intentos invoca las operaciones restantes.
 
  <img src="img/JConsole_10.png" border="1"> 
+ 
 _Figura 16. Invocación de una de nuestras operaciones expuestas en nuestro MBean._
 
 Si invocamos la operación `clear()`, debemos de ver el mensaje en la consola donde estamos ejecutando la clase principal.
 
 
   <img src="img/JConsole_10a.png" border="1"> 
+  
 _Figura 17. Mensaje indicando que una operación se ha realizado exitosamente._
 
 ```shell
