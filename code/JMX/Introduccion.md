@@ -647,9 +647,13 @@ Para hacer esto necesitamos que nuestro MBean tenga un nombre único y eso se lo
 ## ObjectName.
 Para que nuestro MBean tenga una manera inequívoca de referenciarlo, requerimos darle un nombre al momento de registrarlo dentro del servidorde MBeans, este nombre se asigna con la clase:
 ObjectName.
+
 El _Object Name_ es la manera que tiene el servidor de MBeans para identificar de manera inequívoca a un MBean. Dado que el servidor puederecibir MBeans de muchos proveedores, es necesario seguir cierta convención para evitar colisiones de nombres.
+
 El _Object Name_ es importante ya que es a través de él que son invocadas las operaciones expuestas en cada MBean.
+
 La clase ObjectName es la que representa este _Object Name_ y para asegurar que las colisiones existan sigue el siguiente mecanismo paranombrarlo:
+
 El _Object Name_ está compuesto de 2 partes:
 * Un nombre de dominio.
 * Un listado no ordenado de una o más propiedades.
