@@ -27,6 +27,21 @@ fue aprobada en 1998, la primera versión fue liberada justo al siguiente año.
 Actualmente la especificación se encuentra en su versión 1.4 (04 de marzo del 2014) y es sobre la cual se basa este documento.
 La versión 2 de la especificación aún está en proceso y está cobijada por la JSR-0255.
 
+<blockquote>
+Actualización (2026)
+
+Cuando se escribió la versión original de este artículo, la evolución de JMX estaba asociada a la JSR-255 (JMX 2.0), la cual permanecía en desarrollo. Sin embargo, dicha JSR fue retirada oficialmente y nunca llegó a convertirse en un estándar.
+
+En la actualidad no existe una especificación JMX 2.0. La tecnología JMX continúa formando parte de la plataforma Java y su evolución se realiza directamente como parte de las especificaciones de Java SE (JDK), sin mantener una JSR independiente.
+
+Más de dos décadas después de su aparición, JMX continúa siendo un componente fundamental del JDK y el pilar de las capacidades de monitoreo y administración de la plataforma Java.
+
+Referencia
+
+https://www.jcp.org/en/jsr/proposalDetails?id=255
+
+</blockquote>
+
 
 Actualmente con la expectativa de crecimiento de IoT y de la creciente adopción de java en sistemas embebidos, JMX puede volver a resurgir en
 importancia y penetración.
