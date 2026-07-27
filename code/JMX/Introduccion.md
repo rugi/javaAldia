@@ -675,5 +675,197 @@ Cada propiedad es una combinación de `llave=valor`, y no necesariamente se refi
 
 El valor de la propiedad puede ser cualquier secuencia de caracteres exceptuando:
 
+| Char | Detalle |
+|----------|-------------|
+| : | Dos puntos |
+| ” | Comillas dobles |
+| , | Coma |
+| = | Igual |
+| * | Asterisco |
+| ? | Signo de interrogación de cierre|
+
+Usaremos sólo una propiedad para nuestro MBean, la llave será:
+type y el valor:Control, así:
+
+``` java
+type=Control
+```
+
+Dadas las reglas, un valor aceptando también podría ser:
+
+``` java
+type=control.de.nuestro.juego
+``` 
+o
+
+``` java
+type=mx.com.spsolutions.variables.control
+``` 
+Quizá ahora no le veas mucho sentido a este estilo de nombrado, pero conforma vayamos avanzando tendrá más sentido.
+
+### Regla de producción.
+Podemos con lo anterior resumir el nombrado de un MBean de la siguiente manera:
+```
+[domainName]:property=value[,property=value]*
+```
+
+Para hacerlo mas didactico, la gramática puede quedar:
+
+```mermaid
+flowchart LR
+
+    START((Inicio))
+    DOMAIN["domainName"]
+    COLON[":"]
+    PROPERTY["property"]
+    EQUALS["="]
+    VALUE["value"]
+    COMMA[","]
+    END((Fin))
+
+    START --> DOMAIN
+    DOMAIN --> COLON
+    COLON --> PROPERTY
+    PROPERTY --> EQUALS
+    EQUALS --> VALUE
+
+    VALUE --> END
+    VALUE --> COMMA
+    COMMA --> PROPERTY
+
+    classDef startEnd fill:#ECECEC,stroke:#555,color:#000,font-weight:bold;
+    classDef domain fill:#FFE9CC,stroke:#F39C12,color:#7A4300,font-weight:bold;
+    classDef property fill:#D9ECFF,stroke:#4A90E2,color:#003366,font-weight:bold;
+    classDef value fill:#DDF5DD,stroke:#4CAF50,color:#205522,font-weight:bold;
+    classDef separator fill:#F3E5F5,stroke:#8E44AD,color:#4A235A,font-weight:bold;
+
+    class START,END startEnd;
+    class DOMAIN domain;
+    class PROPERTY property;
+    class VALUE value;
+    class COLON,EQUALS,COMMA separator;
+    
+```
+
+Para más ejemplos de nombres de dominio puedes ver la documentación de la clase:
+http://docs.oracle.com/javase/7/docs/api/javax/management/ObjectName.html
+
+### Nuestro object name.
+El _Object Name_ para nuestro _MBean standard_ queda entonces de esta manera:
+
+``` java
+mx.com.spsolutions.jmxtutorial:type=Control
+```
+
+Teniendo el nombre, lo que falta entonces es registrarlo:
+
+Teniendo el nombre, lo que falta entonces es registrarlo:
+
+``` java
+    Adivina adivina = new Adivina(new ArrayList<String>(), "END");
+    MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
+    ObjectName name = new ObjectName("mx.com.spsolutions.jmxtutorial:type=Control");
+    Control mbean = new Control(adivina.getWords());mbs.registerMBean(mbean, name);
+``` 
 
 
+Y listo, con esto nuestro MBean está registrado en el servidor por _default_ de _MBeans_.
+
+### Nuestro ejemplo completo.
+Este es nuestro código ya completo:
+
+``` java
+FALTA
+``` 
+
+Ahora compilamos la interface, la implementación, nuestra clase principal y la ejecutamos.
+
+``` shell
+%> javac .\mx\sps\mbeans\Control.java
+%> javac .\mx\sps\mbeans\ControlMBean.java
+%> javac .\mx\sps\juegos\Adivina.java
+```
+
+Ya estamos listos para ejecutar la aplicación y poder ver el MBean en acción.
+Visualizando nuestro MBean con Jconsole.
+
+Ya compilado el código, ejecutamos la clase principal:
+```  shell
+%>java mx.sps.juegos.Adivina
+``` 
+Con nuestra aplicación en ejecución, vamos a abrir el Jconsole.
+
+```  shell
+%>JConsole
+``` 
+
+Ahora, al iniciar, debe de aparecer el proceso sobre el cual se encuentra en ejecución nuestra clase.
+
+Lo seleccionamos:
+
+_Figura 14. Proceso de nuestro juego listo para ser accedido por JConsole._
+
+Volverá a aparecernos la advertencia de seguridad, continuamos como en los casos anteriores.
+Nos vamos directamente a la ficha de MBeans, _¡y voilá!_ Nuestro MBean debe de estar entre los disponibles.
+
+Se puede ver que el agrupador de nuestro MBean es el nombre de dominio que pusimos en el ObjectName.
+
+_Figura 15. Nuestro MBean visto desde JConsole._
+
+### Invocando operaciones.
+
+Jconsole genera dinámicamente una IU que permite invocar las operaciones que tengan nuestros _MBeans_, en nuestro ejemplo, ya vemos las 3 operaciones que definimos.
+
+La primera operación que podemos invocar es attempts, nos debe de regresar 0, pues aún no hemos escrito nada en la aplicación.
+
+Intenta ahora jugar un rato con la aplicación y después de varios intentos invoca las operaciones restantes.
+
+_Figura 16. Invocación de una de nuestras operaciones expuestas en nuestro MBean._
+
+Si invocamos la operación `clear()`, debemos de ver el mensaje en la consola donde estamos ejecutando la clase principal.
+
+
+_Figura 17. Mensaje indicando que una operación se ha realizado exitosamente._
+
+```shell
+%> java mx.sps.juegos.Adivina
+Que suerte!. Se ha reiniciado su contador de intentos.
+```
+
+_Figura 18. JConsole invocando la operación de clear y su efecto en la aplicación en ejecución._
+
+Listo.
+
+Has creado una aplicación java con un MBean que permite administrar y monitorear parte del estado de la misma.
+
+## Conclusión.
+La supervisión y administración de aplicaciones no es una tarea sencilla, pero, con JMX una tecnología que existe desde los inicios de la plataformajava se puede facilitar mucho.
+
+Diseñada tanto para aplicaciones como para recursos de red, JMX es una opción vigente y en expansión para el monitoreo de aplicaciones dentrode la plataforma java.
+
+Con este documento tienes ahora las bases para poder incorporar MBeans standards a tus aplicaciones.
+
+Ahora puede continuar con la segunda parte de este artículo aquí.
+Si aun no he puesto el link, visita mi perfil de linkedin y ponme un recordatorio ;) 
+
+Sirve que me entero que alguien ha llegado hasta acá.
+
+**@RuGI**
+
+---
+
+Enlaces.
+* JSR-000003: JavaTM Management Extensions (JMX) Specification:
+  *https://jcp.org/en/jsr/detail?id=3
+
+* JSR-000003 JavaTM Management Extensions (JMX) (Maintenance Release 4):
+  *https://jcp.org/aboutJava/communityprocess/mrel/jsr003/index4.html
+
+* JSR 000255 - JMX Specification, version 2.0:
+  *https://jcp.org/en/jsr/detail?id=255
+
+* JSR 160: Java Management Extensions (JMX) Remote API:
+  *https://jcp.org/en/jsr/detail?id=160
+
+* De la medición y otras cosas:
+  *https://www.linkedin.com/pulse/de-la-medici%C3%B3n-y-otras-cosas-isaac-ruiz-guerra
