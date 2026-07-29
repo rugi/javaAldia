@@ -967,7 +967,8 @@ Con este documento tienes ahora las bases para poder incorporar MBeans standards
 
 Ahora puede continuar con la segunda parte de este artículo aquí.
 
-Si aun no he puesto el _link_, visita mi perfil de linkedin y ponme un recordatorio ;) 
+Si aun no he puesto el _link_, visita mi perfil de linkedin y ponme un recordatorio en este post ;) 
+https://www.linkedin.com/feed/update/urn:li:ugcPost:7488265448568836096/
 
 Sirve que me entero que alguien ha llegado hasta acá.
 
