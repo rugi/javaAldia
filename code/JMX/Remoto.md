@@ -5,7 +5,7 @@ El presente documento detalla cómo conectarse a un proceso java de manera remot
 <blockquote>
 **Nota:**
 
-_Este documento se publicó en Diciembre del 2016 en Oracle Technology Network, lo publico nuevamente para su mejor lectura pues la red OTN ha tenido cambios y algunos artículos dejaron de estar disponibles, incluyendo este._
+_Este documento se publicó en Febrero del 2018 en Oracle Technology Network, lo publico nuevamente para su mejor lectura pues la red OTN ha tenido cambios y algunos artículos dejaron de estar disponibles, incluyendo este._
 
 _Puedes ver una versión en PDF del artículo original aquí:_
 <a href="https://github.com/rugi/javaAldia/tree/main/ext/pdf">Respaldo de artículos de JMX en OTN.</a>
