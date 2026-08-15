@@ -15,6 +15,8 @@ _Puedes ver una versión en PDF del artículo original aquí:_
 El presente documento asume que se tiene cierta experiencia construyendo aplicaciones usando el lenguaje de programación java, asume también
 que el lector tiene experiencia como desarrollador de aplicaciones y conoce en ese nivel un sistema operativo, por ende, sabe ejecutar tareas a nivel
 CLI.
+
+
 En este documento, reutilizaremos el código de la parte 1 de esta serie, modificaremos un MBean y mostraremos como realizar una conexión
 remota a un proceso java para administrarlo con JMX.
 
