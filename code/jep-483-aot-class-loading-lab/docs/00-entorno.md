@@ -28,6 +28,11 @@ JDK (debe ser el JDK no solo el JRE).
 java version "25" 2025-09-16 LTS
 Java(TM) SE Runtime Environment (build 25+37-LTS-3491)
 Java HotSpot(TM) 64-Bit Server VM (build 25+37-LTS-3491, mixed mode, sharin
+```
+
+``` powershell
+%>  javac --full-version   
+javac full version "25+37-LTS-3491"
 ``` 
 
 #### Maven
@@ -45,10 +50,16 @@ OS name: "windows 11", version: "10.0", arch: "amd64", family: "windows"
 
 #### Java
 ``` shell
-java -version                                                                                                                                                                         
+~ »java -version                                                                                                                                                                         
 java version "25.0.4" 2026-07-21 LTS
 Java(TM) SE Runtime Environment (build 25.0.4+7-LTS-189)
 Java HotSpot(TM) 64-Bit Server VM (build 25.0.4+7-LTS-189, mixed mode, sharing)
+```
+
+``` shell
+~ »  javac --full-version  
+
+javac full version "25.0.4+7-LTS-189"
 ``` 
 
 ### Maven
