@@ -94,7 +94,8 @@ Estas son las 2 lineas que debemos buscar:
 ```
 ### Verificación
 
-Con la aplicación ejecutándose:
+Con la aplicación ejecutándose, en otra ventana ejecutamos:
+En linux:
 
 ```bash
 curl http://localhost:8383/products
@@ -127,5 +128,8 @@ Respuesta esperada:
   }
 ]
 ```
+
+
+
 
 ---
