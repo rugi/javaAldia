@@ -21,24 +21,7 @@ Referencia oficial: [OpenJDK — JEP 483](https://openjdk.org/jeps/483).
 
 ---
 
-## 2. Entorno de desarrollo y pruebas
 
-Los experimentos se realizarán utilizando Java 25 y Maven en dos sistemas operativos.
-
-| Componente | Windows | Linux |
-|---|---|---|
-| Sistema operativo | Windows 11 | Linux (kernel 5.14, EL9) |
-| Arquitectura | AMD64 | AMD64 |
-| Java | Oracle JDK 25 | Oracle JDK 25.0.4 |
-| Maven | 3.9.5 | 3.9.11 |
-| Codificación | UTF-8 | UTF-8 |
-| Compatibilidad con JEP 483 | Sí | Sí |
-
-**Nota:** para mantener la reproducibilidad, utilizaremos el mismo código fuente y la misma versión de Spring Boot en ambos sistemas operativos.
-
-Las cachés AOT se generarán independientemente en cada entorno.
-
----
 
 ## 3. Aplicación de prueba
 
@@ -136,13 +119,13 @@ Una vez validado el funcionamiento de la aplicación, incorporaremos progresivam
 
 | Experimento | Objetivo | Estado |
 |---|---|---|
-| 00 — Entorno | Validar Java 25 y Maven en Windows y Linux | Completado |
-| 01 — Baseline | Compilar y ejecutar la aplicación sin optimizaciones AOT | En progreso |
-| 02 — AOT Cache | Generar y utilizar una caché AOT | Pendiente |
-| 03 — CDS vs. AOT | Identificar el beneficio adicional de AOT Class Linking | Pendiente |
-| 04 — Benchmark | Medir startup, CPU y memoria | Pendiente |
-| 05 — Comparación | Analizar resultados de Windows y Linux | Pendiente |
-| 06 — Kubernetes | Evaluar el impacto potencial sobre el tiempo hasta Ready | Pendiente |
+| <a href="docs/00-entorno.md">00 — Entorno</a> | Validar Java 25 y Maven en Windows y Linux | Completado |
+| <a href="docs/01-baseline.md">01 — Baseline</a> | Compilar y ejecutar la aplicación sin optimizaciones AOT | En progreso |
+| <a href="docs/02-aot-cache.md">02 — AOT Cache</a> | Generar y utilizar una caché AOT | Pendiente |
+| <a href="docs/03-cds-vs-aot.md">03 — CDS vs. AOT</a> | Identificar el beneficio adicional de AOT Class Linking | Pendiente |
+| <a href="docs/04-benchmark.md">04 — Benchmark</a> | Medir startup, CPU y memoria | Pendiente |
+| <a href="docs/05-comparacion.md">05 — Comparación</a> | Analizar resultados de Windows y Linux | Pendiente |
+| <a href="docs/06-kubernetes.md">06 — Kubernetes</a> | Evaluar el impacto potencial sobre el tiempo hasta Ready | Pendiente |
 
 Los resultados se documentarán conforme se completen los experimentos.
 
