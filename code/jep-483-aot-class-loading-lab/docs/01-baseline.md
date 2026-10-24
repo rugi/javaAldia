@@ -52,11 +52,12 @@ Debemos ver que todo esté OK.
 [INFO] Total time:  12.853 s
 [INFO] Finished at: 2026-10-24T21:50:26Z
 [INFO] ------------------------------------------------------------------------
-```bash
+``` 
 
 ### Ejecución
 
 Tanto en linux como en windows:
+
 ```bash
 java -jar target/jep-483-lab-1.0.0.jar
 ```
