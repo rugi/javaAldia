@@ -79,7 +79,7 @@ src/main/java/dev/rugi/aot/
 
 ### Compilación
 
-Desde la raíz del proyecto:
+Desde la raíz de esta carpeta (tanto en linux como en windows):
 
 ```bash
 mvn clean install
@@ -87,6 +87,7 @@ mvn clean install
 
 ### Ejecución
 
+Tanto en linux como en windows:
 ```bash
 java -jar target/jep-483-lab-1.0.0.jar
 ```
