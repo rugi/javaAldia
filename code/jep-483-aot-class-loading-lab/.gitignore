@@ -1,0 +1,23 @@
+# Maven
+target/
+
+# AOT cache and training artifacts
+*.aot
+*.aotconfig
+*.jsa
+
+# Benchmark outputs
+results/*.csv
+results/*.log
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
