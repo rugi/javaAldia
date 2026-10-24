@@ -42,6 +42,7 @@ Desde la raíz de esta carpeta (tanto en linux como en windows):
 ```bash
 mvn clean install
 ```
+
 Debemos ver que todo esté OK.
 
 ```bash
