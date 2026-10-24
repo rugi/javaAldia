@@ -21,7 +21,7 @@ Referencia oficial: [OpenJDK — JEP 483](https://openjdk.org/jeps/483).
 
 ---
 
-## 4. Próximos experimentos
+## 2. Próximos experimentos
 
 Una vez validado el funcionamiento de la aplicación, incorporaremos progresivamente los experimentos:
 
@@ -39,7 +39,7 @@ Los resultados se documentarán conforme se completen los experimentos.
 
 ---
 
-## 5. Consideraciones importantes
+## 3. Consideraciones importantes
 
 **Ahead-of-Time Class Loading & Linking no es lo mismo que compilación nativa.**
 
