@@ -11,7 +11,9 @@ Los experimentos se realizarán utilizando Java 25 y Maven en dos sistemas opera
 | Codificación | UTF-8 | UTF-8 |
 | Compatibilidad con JEP 483 | Sí | Sí |
 
-**Nota:** para mantener la reproducibilidad, utilizaremos el mismo código fuente y la misma versión de Spring Boot en ambos sistemas operativos.
+**Nota 1:** para mantener la reproducibilidad, utilizaremos el mismo código fuente y la misma versión de Spring Boot en ambos sistemas operativos.
+
+**Nota 2:** No son exactamente la misma versión, la idea es que al momento de hacer el benchmark comparativo tengamos la misma, pero, por ahora nos sirve para avanzar.
 
 Las cachés AOT se generarán independientemente en cada entorno.
 
