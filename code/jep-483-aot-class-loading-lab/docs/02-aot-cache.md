@@ -194,7 +194,7 @@ Started AotApplication in 1.93 seconds (process running for 2.667)
 Con aot:
 
 ```
-: Started AotApplication in 1.037 seconds (process running for 1.376)
+Started AotApplication in 1.037 seconds (process running for 1.376)
 ```
 
 Ahi está la mágia.  :)
