@@ -31,7 +31,7 @@ flowchart TD
     style I fill:#FFF3E0,stroke:#EF6C00,color:#000
 ```
 
-### Primero generemos el caché
+### Primero generemos la caché AOT
 Tanto en linux como en windows:
 
 ```shell
@@ -175,8 +175,27 @@ Debemos prestar especial atención a los siguientes:
 [0.013s][info][aot] Opened AOT cache app.aot.
 [0.048s][info][aot] Using AOT-linked classes: true (static archive: has aot-linked classes)
 ```
-Eso nos indica cual archivo estamos uasndo y si se logró cargar adecuadamente.
+Eso nos indica cuál archivo estamos usando y si se logró cargar adecuadamente.
 
+Validemos que todo está funcionando normal, ejecutemos en otra ventana:
+
+``` shell
+curl http://localhost:8383/products
+```
+
+Windows:
+
+```shell
+curl.exe http://localhost:8383/products
+```
+
+En ambos casos veremos como salida:
+
+```json
+[{"id":1,"name":"Laptop","price":15000.00},{"id":2,"name":"Monitor","price":4500.00},{"id":3,"name":"Keyboard","price":1200.00}]
+```
+
+### Comparación.
 
 Revisemos tambien los tiempos
 
@@ -186,12 +205,12 @@ Revisemos tambien los tiempos
 ```
 Hemos pasado de:
 
-Sin aot:
+Ejecución de entrenamiento AOT
 ```
 Started AotApplication in 1.93 seconds (process running for 2.667)
 ```
 
-Con aot:
+Ejecución utilizando AOT Cache.
 
 ```
 Started AotApplication in 1.037 seconds (process running for 1.376)
