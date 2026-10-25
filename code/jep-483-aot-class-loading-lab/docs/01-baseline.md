@@ -52,7 +52,9 @@ Debemos ver que todo esté OK.
 [INFO] Total time:  12.853 s
 [INFO] Finished at: 2026-10-24T21:50:26Z
 [INFO] ------------------------------------------------------------------------
-``` 
+```
+
+**Nota 1:** El tiempo que vemos corresponden a la ejecución de maven. Aún no ejecutamos la app.
 
 ### Ejecución
 
@@ -92,6 +94,16 @@ Estas son las 2 lineas que debemos buscar:
 2026-10-24T21:52:36.235Z  INFO 349438 --- [jep-483-lab] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8383 (http) with context path '/'
 2026-10-24T21:52:36.262Z  INFO 349438 --- [jep-483-lab] [           main] dev.rugi.aot.AotApplication              : Started AotApplication in 3.49 seconds (process running for 4.299)
 ```
+
+Una pequeña tabla para entender los tiempos que vemos en ambas líneas:
+
+| Métrica | Valor | Interpretación |
+|---|---:|---|
+| Spring Boot startup | 3.490 s | Tiempo de arranque reportado por Spring Boot. |
+| JVM process uptime | 4.299 s | Tiempo transcurrido desde el inicio del proceso JVM hasta ese registro. |
+| Diferencia | 0.809 s | Intervalo adicional que no está incluido en la primera medición. |
+
+
 ### Verificación
 
 Con la aplicación ejecutándose, en otra ventana ejecutamos:
