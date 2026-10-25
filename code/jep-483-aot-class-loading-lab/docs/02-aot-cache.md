@@ -15,7 +15,7 @@ flowchart TD
     F["6. Reiniciar Java con AOT Cache<br/>-Xlog:aot=info<br/>-XX:AOTCache=app.aot"]
     G["7. Revisar logs<br/>Registrar tiempo de arranque<br/>Confirmar uso de AOT"]
     H["8. Ejecutar nuevamente<br/>GET /products"]
-    I["9. Comparar tiempos<br/>Sin caché AOT vs. con caché AOT"]
+    I["9. Comparar tiempos<br/>Entrenamiento AOT vs.ejecución con caché"]
 
     A --> B
     B --> C
