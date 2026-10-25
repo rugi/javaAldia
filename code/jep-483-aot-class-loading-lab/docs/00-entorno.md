@@ -13,7 +13,7 @@ Los experimentos se realizarán utilizando Java 25 y Maven en dos sistemas opera
 
 **Nota 1:** para mantener la reproducibilidad, utilizaremos el mismo código fuente y la misma versión de Spring Boot en ambos sistemas operativos.
 
-**Nota 2:** No son exactamente la misma versión, la idea es que al momento de hacer el benchmark comparativo tengamos la misma, pero, por ahora nos sirve para avanzar.
+**Nota 2:** No son exactamente la misma versión del JFK, la idea es que al momento de hacer el benchmark comparativo tengamos la misma, pero, por ahora nos sirve para avanzar.
 
 Las cachés AOT se generarán independientemente en cada entorno.
 
