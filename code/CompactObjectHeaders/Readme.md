@@ -4,6 +4,11 @@ Este ejemplo se usó en el newsletter en su edición sobre Compact Object Header
 Puedes ver el artículo completo aquí:
 https://www.linkedin.com/pulse/java-25-lts-jep-519-compact-object-headers-isaac-ruiz-guerra-gmn0e/
 
+<blockquote>
+Update: Este material se agrega al contenido de la charla: "¿Actualizar el JDK puede reducir nuestra factura de cloud?".
+Para: JCONF Guatemala 2026.  
+</blockquote>
+
 El ejemplo se usa para mostrar el ahorro de memoria que tiene a partir de java 25, 
 con el JSR-519. Compact Object Headers , el tamaño de los Headers de cada objeto se ha reducido, y eso hace que se requiera menos memoria para cada uno de ellos.
 
