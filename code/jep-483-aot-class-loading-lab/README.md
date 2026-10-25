@@ -1,10 +1,10 @@
 # JEP 483 — Ahead-of-Time Class Loading & Linking
 ---
-
+<p align="right"> 
 Este material forma parte de la presentación: "".
 Para: JCONF Guatemala 2026.
 CD de Guatemala.
-
+</p>
 ---
 
 ## 1. Objetivo
