@@ -83,10 +83,22 @@ En ambos casos veremos como salida:
 
 ### Validar generacion de archivo aot.
 
-Ahora detenemos la ejecución (CTRL+C) y veremos un archivo llamado:
+Ahora detenemos la ejecución (CTRL+C) y veremos un archivo llamado: `app.aot`
+
+Linux:
 
 ```shell
- app.aot
+%> ls  -lrt app.aot
+ -rw-r--r--. 1 rugi rugi 50663424 Oct 25 13:41 app.aot
+```
+
+Windows:
+```shell
+%>  dir .\app.aot
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a---     25/10/2026  07:43 a. m.       53673984    app.aot
 ```
 
 ### Ejecutar con aot
@@ -227,9 +239,8 @@ Linux:
 rm -f app.aot app.aot.config
 ```
 
-
-
 power shell:
 ```shell
-del app.aot* 
+del app.aot
+del app.aot.config
 ```
