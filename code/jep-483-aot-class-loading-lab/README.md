@@ -28,7 +28,7 @@ Una vez validado el funcionamiento de la aplicación, incorporaremos progresivam
 | Experimento | Objetivo | Estado |
 |---|---|---|
 | <a href="docs/00-entorno.md">00 — Entorno</a> | Validar Java 25 y Maven en Windows y Linux | Completado |
-| <a href="docs/01-baseline.md">01 — Baseline</a> | Compilar y ejecutar la aplicación sin optimizaciones AOT | En progreso |
+| <a href="docs/01-baseline.md">01 — Baseline</a> | Compilar y ejecutar la aplicación sin optimizaciones AOT | Completado |
 | <a href="docs/02-aot-cache.md">02 — AOT Cache</a> | Generar y utilizar una caché AOT | Pendiente |
 | <a href="docs/03-cds-vs-aot.md">03 — CDS vs. AOT</a> | Identificar el beneficio adicional de AOT Class Linking | Pendiente |
 | <a href="docs/04-benchmark.md">04 — Benchmark</a> | Medir startup, CPU y memoria | Pendiente |
