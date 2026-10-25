@@ -1,10 +1,9 @@
 # JEP 483 — Ahead-of-Time Class Loading & Linking
 ---
-<p align="right"> 
-Este material forma parte de la presentación: "".
-Para: JCONF Guatemala 2026.
-CD de Guatemala.
-</p>
+
+<p align="right"> Este material forma parte de la presentación: "¿Actualizar el JDK puede reducir nuestra factura de cloud?".</p>
+<p align="right"> Para: JCONF Guatemala 2026.</p>
+
 ---
 
 ## 1. Objetivo
