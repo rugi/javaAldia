@@ -212,5 +212,5 @@ rm -f app.aot app.aot.config
 
 power shell:
 ```shell
-del app.aot app.aot.config
+del app.aot* 
 ```
